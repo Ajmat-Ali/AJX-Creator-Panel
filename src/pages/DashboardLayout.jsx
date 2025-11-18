@@ -8,7 +8,7 @@ function DashboardLayout() {
       <div>
         <DashboardTopBar />
       </div>
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-1 overflow-hidden max-md:flex-col-reverse">
         <DashboardSideBar />
         <DashboardMain />
       </div>

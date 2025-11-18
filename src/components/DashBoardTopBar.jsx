@@ -1,7 +1,7 @@
 function DashboardTopBar() {
   return (
-    <div>
-      <h2 className="text-green bg-amber-900">Dashboard TopBAr...</h2>
+    <div className="p-4 border-3 border-y-green-500 bg-indigo-300">
+      <h2 className="">Dashboard TopBAr...</h2>
     </div>
   );
 }
