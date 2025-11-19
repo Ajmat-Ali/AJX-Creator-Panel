@@ -1,7 +1,15 @@
+import { Outlet } from "react-router";
+import DashboardTopBar from "./DashBoardTopBar";
+
 function DashboardMain() {
   return (
-    <div className="flex-1 border-5 border-red-700">
-      <h3>Dashboard Main....</h3>
+    <div className="flex-1 border-5 border-red-700 overflow-auto">
+      <div>
+        <DashboardTopBar />
+      </div>
+      <div>
+        <Outlet />
+      </div>
     </div>
   );
 }

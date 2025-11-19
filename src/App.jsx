@@ -1,13 +1,10 @@
 import { useState } from "react";
-
-import DashboardLayout from "./pages/DashboardLayout";
+import AllRoutes from "./route/AllRoutes";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <DashboardLayout />
+      <AllRoutes />
     </>
   );
 }
