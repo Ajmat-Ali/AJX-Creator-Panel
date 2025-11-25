@@ -29,10 +29,10 @@ function AllRoutes() {
       <Route path="/login" element={<Login />} />
 
       <Route path="signin" element={<Signin />}>
-        <Route index element={<Step1Account />} />
+        {/* <Route index element={<Step1Account />} />
         <Route path="step2Profile" element={<Step2Profile />} />
         <Route path="step3Preference" element={<Step3Preference />} />
-        <Route path="reviewFormDetails" element={<Review />} />
+        <Route path="reviewFormDetails" element={<Review />} /> */}
       </Route>
 
       <Route path="dashboard" element={<DashboardLayout />}>

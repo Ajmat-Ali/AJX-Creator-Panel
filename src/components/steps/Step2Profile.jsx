@@ -1,8 +1,8 @@
 function Step2Profile() {
   return (
-    <div className="space-y-4 mt-4 flex flex-col items-center">
-      <h2 className="text-xl font-semibold">Profile Details</h2>
-      <form className="w-4/12 border-2 border-black p-4">
+    <div className="mt-4">
+      <h2 className="text-xl text-center font-semibold">Profile Details</h2>
+      <form className="p-4">
         <div className="flex justify-center gap-5 mb-4">
           <div className="flex flex-col gap-1 w-6/12">
             <label htmlFor="userName">User Name</label>
@@ -36,10 +36,6 @@ function Step2Profile() {
             accept="image/*"
             className="border rounded-4xl w-3/12"
           />
-        </div>
-        <div className="flex justify-center gap-4 w-10/12  mt-4 m-auto">
-          <button className="border">Back</button>
-          <button className="border">Next</button>
         </div>
       </form>
     </div>

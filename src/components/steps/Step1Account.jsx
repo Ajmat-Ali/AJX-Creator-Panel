@@ -1,8 +1,10 @@
 export default function Step1Account() {
   return (
-    <div className="space-y-4 mt-4 flex flex-col items-center">
-      <h2 className="text-xl font-semibold">Account Details</h2>
-      <form className="w-4/12 border-2 border-black p-4">
+    <div className=" mt-4">
+      <h2 className="text-xl text-center font-semibold mb-4">
+        Account Details
+      </h2>
+      <form className="p-4">
         <div className="flex justify-center gap-5 mb-4">
           <div className="flex flex-col gap-1 w-6/12">
             <label htmlFor="firstName">First Name</label>
@@ -50,9 +52,6 @@ export default function Step1Account() {
             placeholder="confirm Password"
             className=" border p-2"
           />
-        </div>
-        <div className="flex justify-center w-10/12  mt-4 m-auto">
-          <button className="border">Next</button>
         </div>
       </form>
     </div>
