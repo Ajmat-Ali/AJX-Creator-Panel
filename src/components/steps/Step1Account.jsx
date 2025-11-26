@@ -1,4 +1,15 @@
-export default function Step1Account() {
+export default function Step1Account({ dispatch, formData }) {
+  const {
+    account: { firstName, lastName, email, password, confirmPassword, privacy },
+  } = formData;
+  const handleChange = (e) => {
+    const { id, value, checked, type } = e.target;
+    const x = type === "checkbox" ? checked : value;
+    dispatch({
+      type: "ACCOUNT",
+      data: { ...formData.account, [id]: x },
+    });
+  };
   return (
     <div className=" mt-4">
       <h2 className="text-xl text-center font-semibold mb-4">
@@ -11,8 +22,11 @@ export default function Step1Account() {
             <input
               type="text"
               placeholder="First Name"
-              id="fistName"
+              id="firstName"
               className="border p-2"
+              name="firstName"
+              value={firstName}
+              onChange={handleChange}
             />
           </div>
           <div className="flex flex-col gap-1 w-6/12">
@@ -22,6 +36,9 @@ export default function Step1Account() {
               placeholder="Last Name"
               id="lastName"
               className=" border p-2"
+              name="lastName"
+              value={lastName}
+              onChange={handleChange}
             />
           </div>
         </div>
@@ -33,6 +50,8 @@ export default function Step1Account() {
             id="email"
             placeholder="Email"
             className=" border p-2"
+            value={email}
+            onChange={handleChange}
           />
         </div>
         <div className="flex flex-col gap-1 mb-4">
@@ -40,8 +59,10 @@ export default function Step1Account() {
           <input
             type="password"
             placeholder="Password"
-            name="password"
+            id="password"
             className=" border p-2"
+            value={password}
+            onChange={handleChange}
           />
         </div>
         <div className="flex flex-col gap-1 mb-4">
@@ -51,6 +72,18 @@ export default function Step1Account() {
             id="confirmPassword"
             placeholder="confirm Password"
             className=" border p-2"
+            value={confirmPassword}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="flex flex-col gap-1 mb-4 border-2 border-green-700">
+          <label htmlFor="privacy">T&C</label>
+          <input
+            type="checkbox"
+            id="privacy"
+            className="p-2 h-4"
+            checked={privacy}
+            onChange={handleChange}
           />
         </div>
       </form>
