@@ -1,9 +1,9 @@
-function Step2Profile({ formData, dispatch }) {
+function Step2Profile({ formData, dispatch, err }) {
   const {
     profile: { userName, phone, bio, avatar },
   } = formData;
   const handleChange = (e) => {
-    const { id, type, value } = e.target;
+    const { id, value } = e.target;
     dispatch({
       type: "PROFILE",
       data: { ...formData.profile, [id]: value },
@@ -24,6 +24,7 @@ function Step2Profile({ formData, dispatch }) {
               value={userName}
               onChange={handleChange}
             />
+            <span className="text-red-500">{err.userName && err.userName}</span>
           </div>
           <div className="flex flex-col gap-1 w-6/12">
             <label htmlFor="phone">Phone Number</label>
@@ -35,6 +36,7 @@ function Step2Profile({ formData, dispatch }) {
               value={phone}
               onChange={handleChange}
             />
+            <span className="text-red-500">{err.phone && err.phone}</span>
           </div>
         </div>
         <div className="flex flex-col gap-1 mb-4">

@@ -1,4 +1,4 @@
-export default function Step1Account({ dispatch, formData }) {
+export default function Step1Account({ dispatch, formData, err }) {
   const {
     account: { firstName, lastName, email, password, confirmPassword, privacy },
   } = formData;
@@ -28,6 +28,9 @@ export default function Step1Account({ dispatch, formData }) {
               value={firstName}
               onChange={handleChange}
             />
+            <span className="text-red-500">
+              {err.firstName && err.firstName}
+            </span>
           </div>
           <div className="flex flex-col gap-1 w-6/12">
             <label htmlFor="lastName">Last Name</label>
@@ -40,6 +43,7 @@ export default function Step1Account({ dispatch, formData }) {
               value={lastName}
               onChange={handleChange}
             />
+            <span className="text-red-500">{err.lastName && err.lastName}</span>
           </div>
         </div>
         <div className="flex flex-col gap-1 mb-4">
@@ -53,6 +57,7 @@ export default function Step1Account({ dispatch, formData }) {
             value={email}
             onChange={handleChange}
           />
+          <span className="text-red-500">{err.email && err.email}</span>
         </div>
         <div className="flex flex-col gap-1 mb-4">
           <label htmlFor="password">Password</label>
@@ -64,6 +69,7 @@ export default function Step1Account({ dispatch, formData }) {
             value={password}
             onChange={handleChange}
           />
+          <span className="text-red-500">{err.password && err.password}</span>
         </div>
         <div className="flex flex-col gap-1 mb-4">
           <label htmlFor="confirmPassword">Confirm Password</label>
@@ -75,6 +81,9 @@ export default function Step1Account({ dispatch, formData }) {
             value={confirmPassword}
             onChange={handleChange}
           />
+          <span className="text-red-500">
+            {err.confirmPassword && err.confirmPassword}
+          </span>
         </div>
         <div className="flex flex-col gap-1 mb-4 border-2 border-green-700">
           <label htmlFor="privacy">T&C</label>
@@ -85,6 +94,7 @@ export default function Step1Account({ dispatch, formData }) {
             checked={privacy}
             onChange={handleChange}
           />
+          <span className="text-red-500">{err.privacy && err.privacy}</span>
         </div>
       </form>
     </div>
