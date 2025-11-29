@@ -10,11 +10,13 @@ function Step2Profile({ formData, dispatch, err }) {
     });
   };
   return (
-    <div className="mt-4">
-      <h2 className="text-xl text-center font-semibold">Profile Details</h2>
-      <form className="p-4">
-        <div className="flex justify-center gap-5 mb-4">
-          <div className="flex flex-col gap-1 w-6/12">
+    <div>
+      <h2 className="text-xl text-center font-semibold mb-8">
+        Profile Details
+      </h2>
+      <form className="">
+        <div className="flex justify-center gap-5 mb-4 max-sm:flex-col">
+          <div className="flex flex-col gap-1 w-6/12 max-sm:w-full">
             <label htmlFor="userName">User Name</label>
             <input
               type="text"
@@ -24,9 +26,11 @@ function Step2Profile({ formData, dispatch, err }) {
               value={userName}
               onChange={handleChange}
             />
-            <span className="text-red-500">{err.userName && err.userName}</span>
+            <span className="text-red-500 text-sm">
+              {err.userName && err.userName}
+            </span>
           </div>
-          <div className="flex flex-col gap-1 w-6/12">
+          <div className="flex flex-col gap-1 w-6/12 max-sm:w-full">
             <label htmlFor="phone">Phone Number</label>
             <input
               type="number"
@@ -36,7 +40,9 @@ function Step2Profile({ formData, dispatch, err }) {
               value={phone}
               onChange={handleChange}
             />
-            <span className="text-red-500">{err.phone && err.phone}</span>
+            <span className="text-red-500 text-sm">
+              {err.phone && err.phone}
+            </span>
           </div>
         </div>
         <div className="flex flex-col gap-1 mb-4">
@@ -49,13 +55,13 @@ function Step2Profile({ formData, dispatch, err }) {
           />
         </div>
         <div className="flex flex-col gap-1 mb-4">
-          <label htmlFor="email">Profile Pic</label>
+          <label htmlFor="email">Choose Profile Pic</label>
           <input
             type="file"
             id="imageUpload"
             name="image"
             accept="image/*"
-            className="border rounded-4xl w-3/12"
+            className="border cursor-pointer size-16 rounded-full"
             // value={avatar}
             // onChange={handleChange}
           />

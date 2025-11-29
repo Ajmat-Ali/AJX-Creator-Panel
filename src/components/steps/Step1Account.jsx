@@ -11,13 +11,13 @@ export default function Step1Account({ dispatch, formData, err }) {
     });
   };
   return (
-    <div className=" mt-4">
-      <h2 className="text-xl text-center font-semibold mb-4">
+    <div>
+      <h2 className="text-xl text-center font-semibold mb-8">
         Account Details
       </h2>
-      <form className="p-4">
-        <div className="flex justify-center gap-5 mb-4">
-          <div className="flex flex-col gap-1 w-6/12">
+      <form>
+        <div className="flex justify-center gap-1 mb-4 | max-sm:flex-col">
+          <div className="flex flex-col gap-1 w-6/12 | max-sm:w-full">
             <label htmlFor="firstName">First Name</label>
             <input
               type="text"
@@ -28,11 +28,11 @@ export default function Step1Account({ dispatch, formData, err }) {
               value={firstName}
               onChange={handleChange}
             />
-            <span className="text-red-500">
+            <span className="text-red-500 text-sm">
               {err.firstName && err.firstName}
             </span>
           </div>
-          <div className="flex flex-col gap-1 w-6/12">
+          <div className="flex flex-col gap-1 w-6/12 |  max-sm:w-full">
             <label htmlFor="lastName">Last Name</label>
             <input
               type="text"
@@ -43,7 +43,9 @@ export default function Step1Account({ dispatch, formData, err }) {
               value={lastName}
               onChange={handleChange}
             />
-            <span className="text-red-500">{err.lastName && err.lastName}</span>
+            <span className="text-red-500 text-sm">
+              {err.lastName && err.lastName}
+            </span>
           </div>
         </div>
         <div className="flex flex-col gap-1 mb-4">
@@ -57,7 +59,7 @@ export default function Step1Account({ dispatch, formData, err }) {
             value={email}
             onChange={handleChange}
           />
-          <span className="text-red-500">{err.email && err.email}</span>
+          <span className="text-red-500 text-sm">{err.email && err.email}</span>
         </div>
         <div className="flex flex-col gap-1 mb-4">
           <label htmlFor="password">Password</label>
@@ -69,7 +71,9 @@ export default function Step1Account({ dispatch, formData, err }) {
             value={password}
             onChange={handleChange}
           />
-          <span className="text-red-500">{err.password && err.password}</span>
+          <span className="text-red-500 text-sm">
+            {err.password && err.password}
+          </span>
         </div>
         <div className="flex flex-col gap-1 mb-4">
           <label htmlFor="confirmPassword">Confirm Password</label>
@@ -81,11 +85,11 @@ export default function Step1Account({ dispatch, formData, err }) {
             value={confirmPassword}
             onChange={handleChange}
           />
-          <span className="text-red-500">
+          <span className="text-red-500 text-sm">
             {err.confirmPassword && err.confirmPassword}
           </span>
         </div>
-        <div className="flex flex-col gap-1 mb-4 border-2 border-green-700">
+        <div className="flex flex-col gap-1 mt-8 mb-4 border-2 border-green-700">
           <label htmlFor="privacy">T&C</label>
           <input
             type="checkbox"
@@ -94,7 +98,9 @@ export default function Step1Account({ dispatch, formData, err }) {
             checked={privacy}
             onChange={handleChange}
           />
-          <span className="text-red-500">{err.privacy && err.privacy}</span>
+          <span className="text-red-500 text-sm">
+            {err.privacy && err.privacy}
+          </span>
         </div>
       </form>
     </div>

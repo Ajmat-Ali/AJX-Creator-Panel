@@ -11,11 +11,11 @@ function Step3Preference({ formData, dispatch }) {
     });
   };
   return (
-    <div className="mt-4">
+    <div>
       <h2 className="text-xl text-center font-semibold">Preference Details</h2>
-      <form className="p-4">
-        <div className="flex justify-center gap-5 mb-4">
-          <div className="flex flex-col gap-1 w-6/12">
+      <form>
+        <div className="flex justify-center gap-5 mb-4 max-md:flex-col">
+          <div className="flex flex-col gap-1 w-6/12 max-md:w-full">
             <label htmlFor="contentGoal">Content Goal</label>
             <input
               type="text"
@@ -26,7 +26,7 @@ function Step3Preference({ formData, dispatch }) {
               onChange={handleChange}
             />
           </div>
-          <div className="flex flex-col gap-1 w-6/12">
+          <div className="flex flex-col gap-1 w-6/12 max-md:w-full">
             <label htmlFor="experience">Work Style</label>
             <select
               className="border p-2"
@@ -46,7 +46,7 @@ function Step3Preference({ formData, dispatch }) {
           </label>
           <select
             id="weeklyPostingGoal"
-            className="border-2 p-2 w-6/12"
+            className="border p-2 w-6/12 max-md:w-full"
             value={weeklyPostingGoal}
             onChange={handleChange}
           >
