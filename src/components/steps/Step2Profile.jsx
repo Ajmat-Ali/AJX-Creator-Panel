@@ -1,9 +1,38 @@
+import { useRef, useState } from "react";
+
 function Step2Profile({ formData, dispatch, err }) {
+  const [preview, setPreview] = useState(null);
+  const [fileError, setFileError] = useState(null);
+
   const {
     profile: { userName, phone, bio, avatar },
   } = formData;
+  const ALLOWED = ["image/jpeg", "image/webp"];
+  const MAX_BYTES = 1 * 1024 * 1024; // 2 MB
+
+  // ------------------------------------------------------ Handle Change -----------------------
   const handleChange = (e) => {
-    const { id, value } = e.target;
+    const { id, value, type, files } = e.target;
+    if (type === "file") {
+      const file = files[0];
+
+      if (!file) return;
+
+      if (!ALLOWED.includes(file.type)) {
+        setFileError({ error: "Please upload a JPEG, PNG, or WebP image." });
+        return;
+      }
+
+      if (file.size > MAX_BYTES) {
+        setFileError({
+          error: "File too large. Please choose an image under 1 MB.",
+        });
+        return;
+      }
+      const imgUrl = URL.createObjectURL(file);
+      setPreview(imgUrl);
+      setFileError({});
+    }
     dispatch({
       type: "PROFILE",
       data: { ...formData.profile, [id]: value },
@@ -56,16 +85,27 @@ function Step2Profile({ formData, dispatch, err }) {
         </div>
         <div className="flex flex-col gap-1 mb-4">
           <label htmlFor="email">Choose Profile Pic</label>
-          <input
-            type="file"
-            id="imageUpload"
-            name="image"
-            accept="image/*"
-            className="border cursor-pointer size-16 rounded-full"
-            // value={avatar}
-            // onChange={handleChange}
-          />
+          <div className="flex gap-10 mt-4 max-sm22:flex-col max-sm22:gap-0">
+            <input
+              type="file"
+              id="imageUpload"
+              name="image"
+              accept="image/*"
+              className="border cursor-pointer size-16 rounded-full max-sm22:size-10"
+              // capture="user"
+              // value={avatar}
+              onChange={handleChange}
+            />
+            <img
+              src={preview}
+              alt="Image URL"
+              className={`${
+                preview ? "inline" : "hidden"
+              } w-30 m-auto max-sm:w-20 max-sm22:w-5/12 `}
+            />
+          </div>
         </div>
+        <span className="text-red-500">{fileError?.error}</span>
       </form>
     </div>
   );

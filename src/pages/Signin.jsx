@@ -43,7 +43,7 @@ function Signin() {
       </h1>
       <div className=" border border-black w-4/12 m-auto py-0 px-6 | max-xl:w-6/12 | max-md:w-8/12 | max-sm:w-7/12 max-sm30:w-9/12 max-sm22:w-12/12  max-sm22:px-2">
         <ActiveStep dispatch={dispatch} formData={formData} err={err} />
-        <div className="flex justify-center gap-7 mt-8">
+        <div className="flex justify-center gap-7 my-8">
           <button
             className={`cursor-pointer px-4 py-1 rounded-[5px] bg-blue-600 text-white ${
               step === 0 ? "hidden" : "block"

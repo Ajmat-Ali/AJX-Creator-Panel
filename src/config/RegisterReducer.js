@@ -4,8 +4,8 @@ const initialValue = {
     firstName: "Ajmat",
     lastName: "Ali",
     email: "ajmat@gmail.com",
-    password: "abcd",
-    confirmPassword: "abcd",
+    password: "abcdf",
+    confirmPassword: "abcdf",
     privacy: false,
   },
   profile: {
