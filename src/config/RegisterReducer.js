@@ -12,7 +12,7 @@ const initialValue = {
     userName: "AjX",
     phone: "1234567890",
     bio: "Something about yourself",
-    avatar: "Image",
+    avatar: "",
   },
   preference: {
     contentGoal: "Making Brand",

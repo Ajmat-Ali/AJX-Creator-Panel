@@ -7,6 +7,7 @@ const FormComponent = (formData, setErr) => {
     account: { firstName, lastName, email, password, confirmPassword, privacy },
     profile: { userName, phone, bio, avatar },
   } = formData;
+  
   const configStep = [
     {
       name: "Step1Account",

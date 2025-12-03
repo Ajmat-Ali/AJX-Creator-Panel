@@ -9,6 +9,7 @@ import Review from "../components/steps/Review";
 // --------------------------------------------------------------- Configuration Form Component -------------------
 import ConfigFormComponent from "../config/ConfigFormComponent";
 import { reducer, initialValue } from "../config/RegisterReducer";
+import { Link, Links } from "react-router";
 
 function Signin() {
   const [err, setErr] = useState({});
@@ -36,6 +37,11 @@ function Signin() {
     });
   };
 
+  function handleSubmit() {
+    localStorage.setItem("form", JSON.stringify(formData));
+    alert("Form Submitted successfully" + " " + formData.account.firstName);
+  }
+
   return (
     <div className="p-2">
       <h1 className="text-2xl m-4 text-center mb-6">
@@ -60,13 +66,16 @@ function Signin() {
           >
             Next
           </button>
-          <button
-            className={`cursor-pointer px-4 py-1 rounded-[5px] bg-red-600 text-white ${
-              step === configStep.length - 1 ? "block" : "hidden"
-            }`}
-          >
-            Submit
-          </button>
+          <Link to="/">
+            <button
+              className={`cursor-pointer px-4 py-1 rounded-[5px] bg-red-600 text-white ${
+                step === configStep.length - 1 ? "block" : "hidden"
+              }`}
+              onClick={handleSubmit}
+            >
+              Submit
+            </button>
+          </Link>
         </div>
       </div>
     </div>

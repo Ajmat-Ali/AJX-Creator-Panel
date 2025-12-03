@@ -52,7 +52,7 @@ function Step3Preference({ formData, dispatch }) {
           >
             <option value="1">1</option>
             <option value="7">1-7</option>
-            <option value="more">more</option>
+            <option value="7+">7+</option>
           </select>
         </div>
       </form>

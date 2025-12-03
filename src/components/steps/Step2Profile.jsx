@@ -1,18 +1,21 @@
 import { useRef, useState } from "react";
 
 function Step2Profile({ formData, dispatch, err }) {
-  const [preview, setPreview] = useState(null);
+  // const [avatar, setavatar] = useState(null);
   const [fileError, setFileError] = useState(null);
 
   const {
     profile: { userName, phone, bio, avatar },
   } = formData;
-  const ALLOWED = ["image/jpeg", "image/webp"];
+  const ALLOWED = ["image/jpeg", "image/png", "image/webp"];
   const MAX_BYTES = 1 * 1024 * 1024; // 2 MB
 
-  // ------------------------------------------------------ Handle Change -----------------------
+  // ------------------------------------------------------ Handle Change ----------------------------------
   const handleChange = (e) => {
     const { id, value, type, files } = e.target;
+
+    let newVal = type === "file" ? avatar : value;
+
     if (type === "file") {
       const file = files[0];
 
@@ -29,13 +32,26 @@ function Step2Profile({ formData, dispatch, err }) {
         });
         return;
       }
-      const imgUrl = URL.createObjectURL(file);
-      setPreview(imgUrl);
+
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        const base64Img = e.target.result;
+
+        dispatch({
+          type: "PROFILE",
+          data: { ...formData.profile, [id]: base64Img },
+        });
+      };
+      reader.readAsDataURL(file);
       setFileError({});
+
+      return;
     }
+
     dispatch({
       type: "PROFILE",
-      data: { ...formData.profile, [id]: value },
+      data: { ...formData.profile, [id]: newVal },
     });
   };
   return (
@@ -84,26 +100,26 @@ function Step2Profile({ formData, dispatch, err }) {
           />
         </div>
         <div className="flex flex-col gap-1 mb-4">
-          <label htmlFor="email">Choose Profile Pic</label>
-          <div className="flex gap-10 mt-4 max-sm22:flex-col max-sm22:gap-0">
+          <label htmlFor="avatar">Choose Profile Pic</label>
+          <div className="flex gap-10  mb-4 max-sm22:flex-col max-sm22:gap-0">
             <input
               type="file"
-              id="imageUpload"
+              id="avatar"
               name="image"
               accept="image/*"
-              className="border cursor-pointer size-16 rounded-full max-sm22:size-10"
-              // capture="user"
-              // value={avatar}
+              className="border cursor-pointer "
               onChange={handleChange}
             />
+          </div>
+          {avatar && (
             <img
-              src={preview}
+              src={avatar}
               alt="Image URL"
               className={`${
-                preview ? "inline" : "hidden"
+                avatar ? "inline" : "hidden"
               } w-30 m-auto max-sm:w-20 max-sm22:w-5/12 `}
             />
-          </div>
+          )}
         </div>
         <span className="text-red-500">{fileError?.error}</span>
       </form>
