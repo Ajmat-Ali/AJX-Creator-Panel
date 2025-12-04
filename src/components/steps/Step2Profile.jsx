@@ -55,7 +55,7 @@ function Step2Profile({ formData, dispatch, err }) {
     });
   };
   return (
-    <div>
+    <div className="border-2 border-green-600 w-4/12 m-auto py-0 px-6 | max-xl:w-6/12 | max-md:w-8/12 | max-sm:w-7/12 max-sm30:w-10/12 max-sm22:w-12/12  max-sm22:px-2">
       <h2 className="text-xl text-center font-semibold mb-8">
         Profile Details
       </h2>
@@ -67,7 +67,7 @@ function Step2Profile({ formData, dispatch, err }) {
               type="text"
               placeholder="User Name"
               id="userName"
-              className="border p-2"
+              className="w-full border border-gray-400 rounded-md px-4 py-2 pr-10"
               value={userName}
               onChange={handleChange}
             />
@@ -81,7 +81,7 @@ function Step2Profile({ formData, dispatch, err }) {
               type="number"
               placeholder="Phone Number"
               id="phone"
-              className=" border p-2"
+              className="w-full border border-gray-400 rounded-md px-4 py-2 pr-10"
               value={phone}
               onChange={handleChange}
             />
@@ -93,7 +93,7 @@ function Step2Profile({ formData, dispatch, err }) {
         <div className="flex flex-col gap-1 mb-4">
           <label htmlFor="password">Bio / About You</label>
           <textarea
-            className="border h-32"
+            className="w-full border border-gray-400 rounded-md px-4 py-2 pr-10 h-32"
             id="bio"
             value={bio}
             onChange={handleChange}
@@ -101,13 +101,13 @@ function Step2Profile({ formData, dispatch, err }) {
         </div>
         <div className="flex flex-col gap-1 mb-4">
           <label htmlFor="avatar">Choose Profile Pic</label>
-          <div className="flex gap-10  mb-4 max-sm22:flex-col max-sm22:gap-0">
+          <div className="flex gap-10  mb-4 max-sm22:flex-col max-sm:gap-0">
             <input
               type="file"
               id="avatar"
               name="image"
               accept="image/*"
-              className="border cursor-pointer "
+              className="w-full border border-gray-400 rounded-md px-4 py-2 pr-10 cursor-pointer"
               onChange={handleChange}
             />
           </div>
@@ -117,7 +117,7 @@ function Step2Profile({ formData, dispatch, err }) {
               alt="Image URL"
               className={`${
                 avatar ? "inline" : "hidden"
-              } w-30 m-auto max-sm:w-20 max-sm22:w-5/12 `}
+              } w-30 m-auto max-sm:w-20 max-sm22:w-5/12 border border-gray-400 rounded-md px-4 py-2`}
             />
           )}
         </div>

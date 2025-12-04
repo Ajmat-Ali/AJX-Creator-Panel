@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 
 // --------------------------------------------------------------- Local Component Import -------------------
 import Step1Account from "../components/steps/Step1Account";
@@ -13,11 +13,16 @@ import { Link, Links } from "react-router";
 
 function Signin() {
   const [err, setErr] = useState({});
+  const [allFormData, setAllFormData] = useState(null);
   const [formData, dispatch] = useReducer(reducer, initialValue);
   const { step } = formData;
 
-  const configStep = ConfigFormComponent(formData, setErr);
+  useEffect(() => {
+    let allForms = JSON.parse(localStorage.getItem("forms"));
+    setAllFormData(allForms);
+  }, []);
 
+  const configStep = ConfigFormComponent(formData, setErr, allFormData);
   const ActiveStep = configStep[step].component;
   const validate = configStep[step].validate;
 
@@ -38,16 +43,19 @@ function Signin() {
   };
 
   function handleSubmit() {
-    localStorage.setItem("form", JSON.stringify(formData));
-    alert("Form Submitted successfully" + " " + formData.account.firstName);
+    let existingForm = JSON.parse(localStorage.getItem("forms")) || [];
+    let updated = [...existingForm, formData];
+
+    localStorage.setItem("forms", JSON.stringify(updated));
+    alert("Account Created successfully" + " " + formData.account.firstName);
   }
 
   return (
-    <div className="p-2">
+    <div className="">
       <h1 className="text-2xl m-4 text-center mb-6">
         Signing Page -- Step: {step}
       </h1>
-      <div className=" border border-black w-4/12 m-auto py-0 px-6 | max-xl:w-6/12 | max-md:w-8/12 | max-sm:w-7/12 max-sm30:w-9/12 max-sm22:w-12/12  max-sm22:px-2">
+      <div className="">
         <ActiveStep dispatch={dispatch} formData={formData} err={err} />
         <div className="flex justify-center gap-7 my-8">
           <button
