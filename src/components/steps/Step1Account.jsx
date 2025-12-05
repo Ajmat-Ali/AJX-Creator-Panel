@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
+import { Link } from "react-router";
 
 export default function Step1Account({ dispatch, formData, err }) {
   const [show, setShow] = useState({
@@ -134,6 +135,12 @@ export default function Step1Account({ dispatch, formData, err }) {
           />
           <span className="text-red-500 text-sm mt-2">
             {err.privacy && err.privacy}
+          </span>
+        </div>
+        <div className="text-center">
+          Already have account!{" "}
+          <span className="text-blue-500 underline cursor-pointer">
+            <Link to="/login">Login here</Link>
           </span>
         </div>
       </div>

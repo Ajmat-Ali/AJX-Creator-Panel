@@ -1,13 +1,12 @@
 import { createContext, useState } from "react";
+
 export const LoginContext = createContext();
 
 function AuthContext({ children }) {
-  const [loginData, setLoginData] = useState({
-    login: true,
-  });
+  const [loginStatus, setLoginStatus] = useState(false);
 
   return (
-    <LoginContext.Provider value={{ loginData, setLoginData }}>
+    <LoginContext.Provider value={{ loginStatus, setLoginStatus }}>
       {children}
     </LoginContext.Provider>
   );

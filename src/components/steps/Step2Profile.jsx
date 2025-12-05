@@ -1,4 +1,5 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router";
 
 function Step2Profile({ formData, dispatch, err }) {
   // const [avatar, setavatar] = useState(null);
@@ -59,7 +60,7 @@ function Step2Profile({ formData, dispatch, err }) {
       <h2 className="text-xl text-center font-semibold mb-8">
         Profile Details
       </h2>
-      <form className="">
+      <div className="">
         <div className="flex justify-center gap-5 mb-4 max-sm:flex-col">
           <div className="flex flex-col gap-1 w-6/12 max-sm:w-full">
             <label htmlFor="userName">User Name</label>
@@ -122,7 +123,13 @@ function Step2Profile({ formData, dispatch, err }) {
           )}
         </div>
         <span className="text-red-500">{fileError?.error}</span>
-      </form>
+        <div className="text-center mt-4 mb-2">
+          Already have account!{" "}
+          <span className="text-blue-500 underline cursor-pointer">
+            <Link to="/login">Login here</Link>
+          </span>
+        </div>
+      </div>
     </div>
   );
 }
