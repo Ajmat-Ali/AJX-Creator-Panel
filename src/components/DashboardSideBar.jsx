@@ -38,7 +38,7 @@ function DashboardSideBar() {
         linkUrl="scriptGenerator"
       />
 
-      <button onClick={handleLogOut}>
+      <button onClick={handleLogOut} className="cursor-pointer">
         <div className={` flex items-center gap-2`}>
           <span className="text-xl">{<TbLogout />}</span>
           <span className="max-md:hidden">{"Logout"}</span>
