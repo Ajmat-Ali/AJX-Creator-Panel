@@ -77,6 +77,7 @@ Current focus:
 
 ## Folder Structure
 
+```
 src/
 |---components/
 ||---HomePageComponents/
@@ -115,6 +116,50 @@ src/
 |
 |\*\*\_routes/
 ||\_\*\*AllRoute.jsx
+```
+
+src/
+├── components/
+│ ├── HomePageComponents/
+│ │ ├── Header.jsx
+│ │ ├── HomePageBox.jsx
+│ │ ├── HowWork.jsx
+│ │ ├── Main.jsx
+│ │ └── WhyChoose.jsx
+│ │
+│ ├── Steps/
+│ │ ├── Review.jsx
+│ │ ├── Step1Account.jsx
+│ │ ├── Step2Profile.jsx
+│ │ └── Step3Preference.jsx
+│ │
+│ ├── AuthContext.jsx
+│ ├── ContentIdea.jsx
+│ ├── DashboardHome.jsx
+│ ├── DashboardMain.jsx
+│ ├── DashboardSideBar.jsx
+│ ├── DashboardSideTopBar.jsx
+│ ├── GrowthTracker.jsx
+│ ├── PrivateRoute.jsx
+│ ├── SchedulePost.jsx
+│ └── ScriptGenerator.jsx
+│
+├── config/
+│ ├── ConfigFormComponent.js
+│ ├── LoginValidation.jsx
+│ └── RegisterReducer.js
+│
+├── pages/
+│ ├── DashboardLayout.jsx
+│ ├── Home.jsx
+│ ├── Login.jsx
+│ ├── NotFound.jsx
+│ └── Signin.jsx
+│
+└── routes/
+└── AllRoute.jsx
+
+```
 
 The project follows a feature-based folder structure and is being continuously refactored to align with industry best practices
 
@@ -141,21 +186,4 @@ Ajmat Ali
 Frontend Developer | Creator | Learner
 
 > **_This project is built as part of my learning and portfolio. Feedback and suggestions are always welcome 🙌_**
-
-<!-- -------------------------------------------------------------------------------------------------- -->
-
-# AJX Creator Panel
-
-## Features (Coming Soon):----------------------------------
-
-### AI content idea generator (using simple API)
-
-### Video planner with drag-and-drop calendar
-
-### Content performance visualizer (Recharts + clean UI)
-
-### Script generator (simple prompts UI)
-
-### Hashtag engine
-
-### User segments like IG, YT, FB, etc.
+```
