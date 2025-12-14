@@ -85,12 +85,12 @@ src/
 |||---HomePageBox.jsx
 |||---HowWork.jsx
 |||---Main.jsx
-|||_\_\_WhyChoose.jsx
+|||---WhyChoose.jsx
 ||---Steps/
 |||---Review.jsx
 |||---Step1Account.jsx
 |||---Step2Profile.jsx
-|||_\_\_Step3Preference.jsx
+|||---Step3Preference.jsx
 ||---AuthContext.jsx
 ||---ContentIdea.jsx
 ||---DashboardHome.jsx
@@ -100,65 +100,22 @@ src/
 ||---GrowthTracker.jsx
 ||---PrivateRoute.jsx
 ||---SchedulePost.jsx
-||\_\_\_ScriptGenerator.jsx
+||---ScriptGenerator.jsx
 |
 |---config/
 ||---ConfigFormComponent.js
 ||---LoginValidation.jsx
-||\_\_\_RegisterReducer.js
+||---RegisterReducer.js
 |
 |---pages/
 ||---DashboardLayout.jsx
 ||---Home.jsx
 ||---Login.jsx
 ||---NotFound.jsx
-||\_\_\_Signin.jsx
+||---Signin.jsx
 |
-|\*\*\_routes/
-||\_\*\*AllRoute.jsx
-```
-
-src/
-├── components/
-│ ├── HomePageComponents/
-│ │ ├── Header.jsx
-│ │ ├── HomePageBox.jsx
-│ │ ├── HowWork.jsx
-│ │ ├── Main.jsx
-│ │ └── WhyChoose.jsx
-│ │
-│ ├── Steps/
-│ │ ├── Review.jsx
-│ │ ├── Step1Account.jsx
-│ │ ├── Step2Profile.jsx
-│ │ └── Step3Preference.jsx
-│ │
-│ ├── AuthContext.jsx
-│ ├── ContentIdea.jsx
-│ ├── DashboardHome.jsx
-│ ├── DashboardMain.jsx
-│ ├── DashboardSideBar.jsx
-│ ├── DashboardSideTopBar.jsx
-│ ├── GrowthTracker.jsx
-│ ├── PrivateRoute.jsx
-│ ├── SchedulePost.jsx
-│ └── ScriptGenerator.jsx
-│
-├── config/
-│ ├── ConfigFormComponent.js
-│ ├── LoginValidation.jsx
-│ └── RegisterReducer.js
-│
-├── pages/
-│ ├── DashboardLayout.jsx
-│ ├── Home.jsx
-│ ├── Login.jsx
-│ ├── NotFound.jsx
-│ └── Signin.jsx
-│
-└── routes/
-└── AllRoute.jsx
-
+|---routes/
+||---AllRoute.jsx
 ```
 
 The project follows a feature-based folder structure and is being continuously refactored to align with industry best practices
@@ -186,4 +143,7 @@ Ajmat Ali
 Frontend Developer | Creator | Learner
 
 > **_This project is built as part of my learning and portfolio. Feedback and suggestions are always welcome 🙌_**
+
+```
+
 ```
