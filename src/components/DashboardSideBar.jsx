@@ -6,12 +6,12 @@ import { RiAiGenerate } from "react-icons/ri";
 import { TbLogout } from "react-icons/tb";
 import { Link } from "react-router";
 import { useContext } from "react";
-import { LoginContext } from "./AuthContext";
+import { LoginContext } from "./context/AuthContext";
 
 function DashboardSideBar() {
-  const { setLoginStatus } = useContext(LoginContext);
+  const { logout } = useContext(LoginContext);
   const handleLogOut = () => {
-    setLoginStatus(false);
+    logout();
   };
 
   return (

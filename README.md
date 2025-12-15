@@ -28,7 +28,7 @@ The main goal of AjX Creator Panel is to:
 
 - Login using username or email + password
 - Authentication state managed using Context API
-- Login status stored in memory (Context)
+- Login status stored in memory (Context) and LocalStorage to be login until/unless user don't logout manually
 
 3. Protected Routes (Private Routing)
 
@@ -56,6 +56,7 @@ The public homepage includes:
 - Hero / Main Section
 - Why Choose AjX Creator Panel
 - How It Works
+- Footer
 - More sections planned
 
 ## Tech Stack

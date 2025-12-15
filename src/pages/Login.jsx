@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router";
 import LoginValidation from "../config/LoginValidation";
 import { useNavigate } from "react-router";
-import { LoginContext } from "../components/AuthContext";
+import { LoginContext } from "../components/context/AuthContext";
 
 function Login() {
   const [loginData, setLoginData] = useState({
@@ -10,9 +10,9 @@ function Login() {
     password: "",
   });
   const navigate = useNavigate();
-  const { setLoginStatus } = useContext(LoginContext);
+  const { login } = useContext(LoginContext);
 
-  const [loginError, setLoginError] = useState({});
+  const [loginError, setLoginError] = useState();
   const [allFormData, setAllFormData] = useState(null);
 
   useEffect(() => {
@@ -25,14 +25,14 @@ function Login() {
     setLoginData((pre) => ({ ...pre, [id]: value }));
   };
 
-  const loginCheck = LoginValidation(loginData, setLoginError, allFormData);
-
   const handleLogin = () => {
-    if (!loginCheck.validation()) {
-      setLoginStatus(true);
+    const result = LoginValidation(loginData, setLoginError, allFormData);
+    if (result.success) {
+      login(result.user);
       navigate("/");
       return;
     }
+    setLoginError(result.err);
   };
 
   return (
@@ -60,7 +60,7 @@ function Login() {
         <div className="text-center">
           {" "}
           <span className="text-red-500 font-sm">
-            {loginError.userCredential && loginError.userCredential}
+            {loginError && loginError}
           </span>
         </div>
         <button
