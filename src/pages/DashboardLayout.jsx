@@ -1,6 +1,6 @@
-import DashboardMain from "../components/DashboardMain";
-import DashboardSideBar from "../components/DashboardSideBar";
-import DashboardTopBar from "../components/DashBoardTopBar";
+import DashboardMain from "../components/dashboard/DashboardMain";
+import DashboardSideBar from "../components/dashboard/DashboardSideBar";
+// import DashboardTopBar from "../components/dashboard/DashBoardTopBar";
 
 function DashboardLayout() {
   return (

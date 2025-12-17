@@ -10,11 +10,11 @@ import PrivateRoute from "../components/PrivateRoute";
 import Review from "../components/steps/Review";
 
 // ------------------------------------------- Dashboard Components Import ------------------------------
-import DashboardHome from "../components/DashboardHome";
-import ContentIdea from "../components/ContentIdea";
-import GrowthTracker from "../components/GrowthTracker";
-import SchedulePost from "../components/SchedulePost";
-import ScriptGenerator from "../components/ScriptGenerator";
+import DashboardHome from "../components/dashboard/DashboardHome";
+import ContentIdea from "../components/dashboard/ContentIdea";
+import GrowthTracker from "../components/dashboard/GrowthTracker";
+import SchedulePost from "../components/dashboard/SchedulePost";
+import ScriptGenerator from "../components/dashboard/ScriptGenerator";
 
 // ------------------------------------------- Signin (MultiSteps) Components Import ------------------------------
 import Step1Account from "../components/steps/Step1Account";

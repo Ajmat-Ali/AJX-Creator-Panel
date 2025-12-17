@@ -1,6 +1,6 @@
 # AjX Creator Panel 🚀
 
-AjX Creator Panel is a personal full‑stack style frontend project built to help content creators manage ideas, platforms, and growth from a single dashboard. This project is also part of my learning journey as a frontend developer, focusing on React, routing, authentication logic, state management, and scalable UI design.
+jX Creator Panel is a frontend dashboard that helps content creators manage ideas, scripts, and content performance from a single interface.
 
 ## Project Purpose
 
@@ -80,43 +80,55 @@ Current focus:
 
 ```
 src/
-|---components/
-||---HomePageComponents/
+|-components/
+||--context/
+|||---AuthContext
+||
+||--dashboard/
+|||---DashboardMain.jsx
+|||---DashboardSideBar.jsx
+|||---DashboardTop.jsx
+|||---DashboardHome.jsx
+|||---ContentIdea.jsx
+|||---ScheduledPost.jsx
+|||---GrowthTracker.jsx
+|||---ScriptGenerator.jsx
+||
+||--HomePageComponents/
 |||---Header.jsx
-|||---HomePageBox.jsx
-|||---HowWork.jsx
 |||---Main.jsx
+|||---HowWork.jsx
+|||---HomePageBox.jsx
 |||---WhyChoose.jsx
-||---Steps/
-|||---Review.jsx
+|||---ReadyToCreate.jsx
+|||---Footer.jsx
+||
+||--steps/
 |||---Step1Account.jsx
 |||---Step2Profile.jsx
 |||---Step3Preference.jsx
-||---AuthContext.jsx
-||---ContentIdea.jsx
-||---DashboardHome.jsx
-||---DashboardMain.jsx
-||---DashboardSideBar.jsx
-||---DashboardSideTopBar.jsx
-||---GrowthTracker.jsx
-||---PrivateRoute.jsx
-||---SchedulePost.jsx
-||---ScriptGenerator.jsx
+|||---Review.jsx
+||
+||--privateRoute
 |
-|---config/
-||---ConfigFormComponent.js
-||---LoginValidation.jsx
-||---RegisterReducer.js
 |
-|---pages/
-||---DashboardLayout.jsx
-||---Home.jsx
-||---Login.jsx
-||---NotFound.jsx
-||---Signin.jsx
+|-config/
+||--ConfigFormComponent.js
+||--LoginValidation.jsx
+||--RegisterReducer.js
 |
-|---routes/
-||---AllRoute.jsx
+|
+|-pages/
+||--Home.jsx
+||--DashboardLayout.jsx
+||--Login.jsx
+||--Signin.jsx
+||--NotFound.jsx
+|
+|
+|_route/
+||__AllRoutes.jsx
+
 ```
 
 The project follows a feature-based folder structure and is being continuously refactored to align with industry best practices
@@ -144,7 +156,3 @@ Ajmat Ali
 Frontend Developer | Creator | Learner
 
 > **_This project is built as part of my learning and portfolio. Feedback and suggestions are always welcome 🙌_**
-
-```
-
-```
