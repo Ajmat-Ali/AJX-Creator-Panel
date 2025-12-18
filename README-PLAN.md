@@ -14,7 +14,8 @@ A creator’s journey is:
 
 ## 🔹 What problem does “Content Idea” solve?
 
-- A creator usually:
+A creator usually:
+
 - Gets ideas randomly
 - Forgets them
 - Doesn’t know for which platform
@@ -31,7 +32,7 @@ If it does this well → project looks professional.
 
 We break this page into 3 logical parts.
 
-### ***Part A️ Add New Idea***
+### **_Part A️ Add New Idea_**
 
 #### What inputs are REQUIRED (keep it simple):
 
@@ -66,7 +67,7 @@ We break this page into 3 logical parts.
 
 - Saves to localStorage
 
-## ***Part B️ Idea List***
+## **_Part B️ Idea List_**
 
 After saving, user should see ideas.
 
@@ -80,7 +81,7 @@ Each idea card should show:
 - Delete button
 - Edit later
 
-## ***Part C️ Filter & Search***
+## **_Part C️ Filter & Search_**
 
 Even beginners can do simple filter.
 

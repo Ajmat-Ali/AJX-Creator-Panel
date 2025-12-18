@@ -4,7 +4,7 @@ import DashboardSideBar from "../components/dashboard/DashboardSideBar";
 
 function DashboardLayout() {
   return (
-    <div className=" h-screen flex flex-1 overflow-hidden max-md:flex-col-reverse">
+    <div className=" h-screen flex  overflow-hidden max-md:flex-col-reverse">
       <DashboardSideBar />
       <DashboardMain />
     </div>

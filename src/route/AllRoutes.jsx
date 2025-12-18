@@ -11,7 +11,7 @@ import Review from "../components/steps/Review";
 
 // ------------------------------------------- Dashboard Components Import ------------------------------
 import DashboardHome from "../components/dashboard/DashboardHome";
-import ContentIdea from "../components/dashboard/ContentIdea";
+import ContentIdea from "../components/dashboard/content-Idea/ContentIdea";
 import GrowthTracker from "../components/dashboard/GrowthTracker";
 import SchedulePost from "../components/dashboard/SchedulePost";
 import ScriptGenerator from "../components/dashboard/ScriptGenerator";

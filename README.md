@@ -41,12 +41,12 @@ The main goal of AjX Creator Panel is to:
 
 After successful login, users can access the dashboard with the following sections:
 
-- Dashboard Home (Coming Soon)
-- Content Ideas (Coming Soon)
-- Scheduled Posts (Coming Soon)
-- Content Performance (Coming Soon)
-- Script Generator (Coming Soon)
-- Logout (Fully Working)
+- &#x2718; Dashboard Home (Coming Soon)
+- &#x2714; Content Ideas:- Creator can write idea and save it to localStorage <font color="#FeFe">(Coming soon:- Searching idea, deleting idea) </font>
+- &#x2718; Scheduled Posts (Coming Soon)
+- &#x2718; Content Performance (Coming Soon)
+- &#x2718; Script Generator (Coming Soon)
+- &#x2718; Logout (Fully Working)
 
 5. Landing / Home Page
 
@@ -85,11 +85,17 @@ src/
 |||---AuthContext
 ||
 ||--dashboard/
+|||---content-idea/
+||||----ContentIdea.jsx
+||||----ContentIdeaMain.jsx
+||||----DisplayIdea.jsx
+||||----AddIdeaModel.jsx
+||||----ValidateIdea.js
+|||
 |||---DashboardMain.jsx
 |||---DashboardSideBar.jsx
 |||---DashboardTop.jsx
 |||---DashboardHome.jsx
-|||---ContentIdea.jsx
 |||---ScheduledPost.jsx
 |||---GrowthTracker.jsx
 |||---ScriptGenerator.jsx

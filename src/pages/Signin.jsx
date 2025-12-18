@@ -13,16 +13,16 @@ import { Link, Links } from "react-router";
 
 function Signin() {
   const [err, setErr] = useState({});
-  const [allFormData, setAllFormData] = useState(null);
+  const [storedUsers, setStoredUsers] = useState(null);
   const [formData, dispatch] = useReducer(reducer, initialValue);
   const { step } = formData;
 
   useEffect(() => {
     let allForms = JSON.parse(localStorage.getItem("forms"));
-    setAllFormData(allForms);
+    setStoredUsers(allForms);
   }, []);
 
-  const configStep = ConfigFormComponent(formData, setErr, allFormData);
+  const configStep = ConfigFormComponent(formData, setErr, storedUsers);
   const ActiveStep = configStep[step].component;
   const validate = configStep[step].validate;
 

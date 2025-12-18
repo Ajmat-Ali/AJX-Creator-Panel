@@ -2,17 +2,18 @@ import Step1Account from "../components/steps/Step1Account";
 import Step2Profile from "../components/steps/Step2Profile";
 import Step3Preference from "../components/steps/Step3Preference";
 import Review from "../components/steps/Review";
-const FormComponent = (formData, setErr, allFormData) => {
+const FormComponent = (formData, setErr, storedUsers) => {
   const {
     account: { firstName, lastName, email, password, confirmPassword, privacy },
     profile: { userName, phone, bio, avatar },
   } = formData;
 
-  let checkDuplicate = allFormData?.flatMap((form) => [
+  let checkDuplicate = storedUsers?.flatMap((form) => [
     form.account.email,
     form.profile.userName,
     form.profile.phone,
   ]);
+
 
   const configStep = [
     {
@@ -31,7 +32,7 @@ const FormComponent = (formData, setErr, allFormData) => {
           newErr.email = "Email is not valid";
         }
 
-        if (checkDuplicate.includes(email)) {
+        if (checkDuplicate?.includes(email)) {
           newErr.email = "Email already exist";
         }
 
@@ -66,7 +67,7 @@ const FormComponent = (formData, setErr, allFormData) => {
           newErr.userName = "User Name is required with min 3 character";
         }
 
-        if (checkDuplicate.includes(userName)) {
+        if (checkDuplicate?.includes(userName)) {
           newErr.userName = "User Name is already used";
         }
 
@@ -74,7 +75,7 @@ const FormComponent = (formData, setErr, allFormData) => {
           newErr.phone = "Phone is not valid";
         }
 
-        if (checkDuplicate.includes(phone)) {
+        if (checkDuplicate?.includes(phone)) {
           newErr.phone = "Phone no. already exist";
         }
         setErr(newErr);

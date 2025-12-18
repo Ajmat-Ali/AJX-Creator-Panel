@@ -18,7 +18,7 @@ function DashboardTopBar() {
           <option value="instagram">Instagram</option>
           <option value="youtube">YouTube</option>
           <option value="facebook">Facebook</option>
-          <option value="linkedin">LinkedIn</option>
+          <option value="twitter">Twitter</option>
         </select>
 
         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
