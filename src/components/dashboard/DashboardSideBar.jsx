@@ -6,9 +6,9 @@ import { RiAiGenerate } from "react-icons/ri";
 import { TbLogout } from "react-icons/tb";
 import { Link } from "react-router";
 import { useContext, useState } from "react";
-import { LoginContext } from "../context/AuthContext";
 import { LuPanelLeftOpen, LuPanelRightOpen } from "react-icons/lu";
-// import { LuPanelRightOpen } from "react-icons/lu";
+
+import { LoginContext } from "../context/createContext";
 
 function DashboardSideBar() {
   const [toggle, setToggle] = useState(true);

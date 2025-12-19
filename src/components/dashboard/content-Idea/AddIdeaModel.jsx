@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
+// ---------------------------------------------------- Local Import ---------------
 import ValidateIdea from "./ValidateIdea";
-function AddIdeaModel({ modal, setModal, addIdea }) {
+import { IdeaContext } from "../../context/createContext";
+
+function AddIdeaModel() {
+  const { modal, setModal, addIdea } = useContext(IdeaContext);
+
   const [idea, setIdea] = useState({ title: "", description: "" });
   const [err, setErr] = useState({});
   const { title, description } = idea;

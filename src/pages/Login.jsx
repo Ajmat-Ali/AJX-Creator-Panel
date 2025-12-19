@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router";
 import LoginValidation from "../config/LoginValidation";
 import { useNavigate } from "react-router";
-import { LoginContext } from "../components/context/AuthContext";
+import { LoginContext } from "../components/context/createContext";
 
 function Login() {
   const [loginData, setLoginData] = useState({

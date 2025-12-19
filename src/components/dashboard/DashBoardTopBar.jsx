@@ -1,7 +1,8 @@
-import { useContext } from "react";
-import { LoginContext } from "../context/AuthContext";
 import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from "react-icons/bs";
 import Avatar from "../Avatar";
+import { useContext } from "react";
+import { LoginContext } from "../context/createContext";
+
 function DashboardTopBar() {
   const { user } = useContext(LoginContext);
 
