@@ -24,10 +24,10 @@ function DashboardSideBar() {
 
   return (
     <div className="p-5 pr-8 border-r-4 border-black overflow-y-auto | max-md:w-screen flex flex-col gap-y-5 max-md:flex-row max-md:gap-x-15 max-md:justify-evenly">
-      <div className="flex justify-end">
+      <div className="flex justify-end max-md:hidden">
         <button
           onClick={handleToggle}
-          className="cursor-pointer max-w-fit text-2xl max-md:hidden"
+          className="cursor-pointer max-w-fit text-2xl "
         >
           {toggle ? <LuPanelRightOpen /> : <LuPanelLeftOpen />}
         </button>
@@ -98,6 +98,7 @@ function SideBarContent({ icon, text, linkUrl, toggle }) {
           whitespace-nowrap
           transition-all duration-300 ease-in-out
           max-md:hidden
+          overflow-hidden
           ${
             toggle
               ? "opacity-100 translate-x-0 max-w-[200px]"

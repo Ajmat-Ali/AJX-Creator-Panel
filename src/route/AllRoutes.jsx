@@ -14,7 +14,7 @@ import DashboardHome from "../components/dashboard/DashboardHome";
 import ContentIdea from "../components/dashboard/content-Idea/ContentIdea";
 import GrowthTracker from "../components/dashboard/GrowthTracker";
 import SchedulePost from "../components/dashboard/SchedulePost";
-import ScriptGenerator from "../components/dashboard/ScriptGenerator";
+import ScriptGenerator from "../components/dashboard/script-generator/Script";
 
 // ------------------------------------------- Signin (MultiSteps) Components Import ------------------------------
 import Step1Account from "../components/steps/Step1Account";

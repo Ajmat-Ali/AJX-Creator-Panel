@@ -44,7 +44,7 @@ function SearchComponent() {
   };
 
   if (!debounceRef.current) {
-    debounceRef.current = debounce(handleSearchIdea, 2000);
+    debounceRef.current = debounce(handleSearchIdea, 1000);
   }
 
   return (
