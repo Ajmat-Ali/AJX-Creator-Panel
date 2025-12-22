@@ -43,7 +43,7 @@ After successful login, users can access the dashboard with the following sectio
 
 - &#x2718; Dashboard Home (Coming Soon)
 - &#x2714; Content Ideas:- Creator can write idea and save it to localStorage, Search ideas based on title (Debounce) and delete idea
-- &#x2718; Script Generator (Allowed user to generate script (false), coming soon:- copu, save, delete script)
+- &#x2718; Script Generator (Allowed user to generate script (false), save script, load saved script, delete script coming soon:- copy, clear)
 - &#x2718; Scheduled Posts (Coming Soon)
 - &#x2718; Content Performance (Coming Soon)
 - &#x2718; Logout (Fully Working)
@@ -104,6 +104,8 @@ src/
 ||||----ToneButton.jsx
 ||||----scriptGenerator.js
 ||||----validateGenerator.jsx
+||||----DisplaySavedScript.jsx
+||||----ScriptShimmer.jsx
 |||
 |||
 |||---DashboardMain.jsx

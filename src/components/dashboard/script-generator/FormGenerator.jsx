@@ -35,14 +35,16 @@ function FormGenerator({ idea, setIdea, err, setErr, setScript }) {
     if (!result()) {
       const generatedScriptVal = scriptGenerator(idea, firstName);
 
-      setScript(generatedScriptVal);
+      setIdea((pre) => {
+        return { ...pre, ["script"]: generatedScriptVal };
+      });
       return;
     }
   };
 
   return (
-    <div className="lg:col-span-1">
-      <h2 className="text-xl font-semibold text-gray-800 mb-4">
+    <div className="lg:col-span-1 ">
+      <h2 className="text-xl font-semibold text-gray-800 mb-4 max-md:text-center max-md:mb-8">
         Generate Script
       </h2>
 

@@ -1,5 +1,5 @@
 function validateGenerate(idea, setErr) {
-  const { title, tone, length } = idea;
+  const { title, tone, script } = idea;
 
   return () => {
     const err = {};
@@ -9,9 +9,22 @@ function validateGenerate(idea, setErr) {
     if (!tone) {
       err.tone = "Please select a Tone ";
     }
+
     setErr(err);
     return err.title || err.tone ? true : false;
   };
 }
 
 export default validateGenerate;
+
+export function validateScript(idea, setErr) {
+  const { script } = idea;
+  return () => {
+    const err = {};
+    if (!script) {
+      err.script = "No script generated! ";
+    }
+    setErr(err);
+    return err.script ? true : false;
+  };
+}

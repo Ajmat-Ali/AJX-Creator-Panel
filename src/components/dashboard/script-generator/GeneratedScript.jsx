@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { BsTrash } from "react-icons/bs";
 import { IoCopyOutline } from "react-icons/io5";
 import generateScript from "./scriptGenerator";
-function GeneratedScript({ script, setScript }) {
+function GeneratedScript({ idea, setIdea, err }) {
   const handleChange = (e) => {
-    const { value } = e.target;
-    setScript(value);
+    const { value, name } = e.target;
+    setIdea((pre) => {
+      return { ...pre, [name]: value };
+    });
   };
 
   return (
@@ -34,13 +36,15 @@ function GeneratedScript({ script, setScript }) {
         </div>
       </div>
 
+      <span className="text-red-500 text-sm">{err.script && err.script}</span>
       <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 h-96 overflow-y-auto">
         <textarea
           id="generatedScript"
+          name="script"
           onChange={handleChange}
           className="w-full h-full bg-transparent focus:outline-none resize-none"
           placeholder="Your generated script will appear here..."
-          value={script}
+          value={idea.script}
         ></textarea>
       </div>
 
