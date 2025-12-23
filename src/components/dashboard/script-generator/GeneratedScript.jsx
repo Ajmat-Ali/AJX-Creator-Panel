@@ -1,23 +1,60 @@
-import { useEffect, useState } from "react";
+import { useRef } from "react";
 import { BsTrash } from "react-icons/bs";
 import { IoCopyOutline } from "react-icons/io5";
-import generateScript from "./scriptGenerator";
-function GeneratedScript({ idea, setIdea, err }) {
+function GeneratedScript({ idea, setIdea, err, message, setMessage }) {
+  const copyRef = useRef(null);
   const handleChange = (e) => {
     const { value, name } = e.target;
     setIdea((pre) => {
       return { ...pre, [name]: value };
     });
   };
+  const handleClearScript = () => {
+    if (confirm("Are you sure want to clear this script")) {
+      setIdea({
+        title: "",
+        tone: "",
+        length: "medium",
+        script: "",
+      });
+    }
+  };
+
+  const handleCopy = () => {
+    navigator.clipboard
+      .writeText(idea.script)
+      .then(() => {
+        setMessage("Copied to Clipboard!");
+      })
+      .catch(() => {
+        setMessage("Copy failed");
+      })
+      .finally(() => {
+        if (copyRef.current) {
+          clearTimeout(copyRef.current);
+        }
+        copyRef.current = setTimeout(() => {
+          setMessage("");
+        }, 1500);
+      });
+  };
 
   return (
     <div className="lg:col-span-2">
+      <div
+        className={`${
+          message ? "block" : "hidden"
+        } fixed font-semibold top-30 right-10 bg-gray-900 text-white p-1 px-2 rounded-xl`}
+      >
+        {message}
+      </div>
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold text-gray-800">
           Generated Script
         </h2>
         <div className="flex space-x-2">
           <button
+            onClick={handleCopy}
             className="text-gray-500 hover:text-gray-700 p-2 rounded-lg bg-gray-100 cursor-pointer"
             title="Copy to clipboard"
           >
@@ -26,6 +63,7 @@ function GeneratedScript({ idea, setIdea, err }) {
             </span>
           </button>
           <button
+            onClick={handleClearScript}
             className="text-gray-500 hover:text-gray-700 p-2 rounded-lg bg-gray-100 cursor-pointer"
             title="Clear script"
           >
@@ -47,13 +85,6 @@ function GeneratedScript({ idea, setIdea, err }) {
           value={idea.script}
         ></textarea>
       </div>
-
-      {/* <div id="loadingIndicator" className="hidden mt-4 text-center">
-        <div className="inline-flex items-center">
-          <div className="spinner border-2 border-blue-500 border-t-transparent rounded-full w-5 h-5 mr-2"></div>
-          <span className="text-gray-600">Generating your script...</span>
-        </div>
-      </div> */}
     </div>
   );
 }

@@ -13,6 +13,7 @@ function Script() {
   });
 
   const [err, setErr] = useState({});
+  const [message, setMessage] = useState(""); // Copy Message
   const [savedScript, setSavedScript] = useState(
     JSON.parse(localStorage.getItem("scripts")) || []
   );
@@ -63,7 +64,14 @@ function Script() {
           setSavedScript={setSavedScript}
           addScript={addScript}
         />
-        <ScriptMain idea={idea} setIdea={setIdea} err={err} setErr={setErr} />
+        <ScriptMain
+          idea={idea}
+          setIdea={setIdea}
+          err={err}
+          setErr={setErr}
+          message={message}
+          setMessage={setMessage}
+        />
         <div className="bg-white rounded-xl shadow-md p-6">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">
             Saved Scripts

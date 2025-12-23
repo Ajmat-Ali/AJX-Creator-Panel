@@ -13,7 +13,7 @@ The main goal of AjX Creator Panel is to:
 
 ## Features Implemented So Far
 
-1. Multi‑Step Sign‑Up System
+### <font style="color:yellow;"> 1. Multi‑Step Sign‑Up System </font>
 
 - Step‑by‑step form built using multiple React components
 - Collects user data across different steps
@@ -24,31 +24,31 @@ The main goal of AjX Creator Panel is to:
 - Review page before final submission
 - All user data stored in localStorage
 
-2. Login System with Authentication Logic
+### <font style="color:yellow;"> 2. Login System with Authentication Logic </font>
 
 - Login using username or email + password
 - Authentication state managed using Context API
 - Login status stored in memory (Context) and LocalStorage to be login until/unless user don't logout manually
 
-3. Protected Routes (Private Routing)
+### <font style="color:yellow;"> 3. Protected Routes (Private Routing) </font>
 
 - Implemented using React Router DOM
 - If a user tries to access a private route:
 - Redirected to Login Page if not authenticated
 - Allowed access if authenticated
 
-4. Dashboard (Private Route)
+### <font style="color:yellow;"> 4. Dashboard (Private Route) </font>
 
 After successful login, users can access the dashboard with the following sections:
 
-- &#x2718; Dashboard Home (Coming Soon)
-- &#x2714; Content Ideas:- Creator can write idea and save it to localStorage, Search ideas based on title (Debounce) and delete idea
-- &#x2718; Script Generator (Allowed user to generate script (false), save script, load saved script, delete script coming soon:- copy, clear)
-- &#x2718; Scheduled Posts (Coming Soon)
-- &#x2718; Content Performance (Coming Soon)
-- &#x2718; Logout (Fully Working)
+- **&#x2718; Dashboard Home** (Coming Soon)
+- **&#x2714; Content Ideas:-** Creator can write idea and save it to localStorage, Search ideas based on title (Debounce) and delete idea
+- **&#x2714; Script Generator:-** Allowed user to generate script (false), save, load saved, delete, copy, clear script
+- **&#x2718; Scheduled Posts** (Coming Soon)
+- **&#x2718; Content Performance** (Coming Soon)
+- **&#x2714; Logout**:- After logout user will navigate to landing page
 
-5. Landing / Home Page
+### <font style="color:yellow;"> 5. Landing / Home Page </font>
 
 The public homepage includes:
 
