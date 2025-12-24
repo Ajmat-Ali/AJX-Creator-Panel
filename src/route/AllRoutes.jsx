@@ -12,14 +12,12 @@ import Review from "../components/steps/Review";
 // ------------------------------------------- Dashboard Components Import ------------------------------
 import DashboardHome from "../components/dashboard/DashboardHome";
 import ContentIdea from "../components/dashboard/content-Idea/ContentIdea";
-import GrowthTracker from "../components/dashboard/GrowthTracker";
-import SchedulePost from "../components/dashboard/SchedulePost";
 import ScriptGenerator from "../components/dashboard/script-generator/Script";
+import SchedulePost from "../components/dashboard/scheduled-post/SchedulePost";
+import GrowthTracker from "../components/dashboard/GrowthTracker";
 
 // ------------------------------------------- Signin (MultiSteps) Components Import ------------------------------
-import Step1Account from "../components/steps/Step1Account";
-import Step2Profile from "../components/steps/Step2Profile";
-import Step3Preference from "../components/steps/Step3Preference";
+
 import NotFound from "../pages/NotFound";
 
 function AllRoutes() {
