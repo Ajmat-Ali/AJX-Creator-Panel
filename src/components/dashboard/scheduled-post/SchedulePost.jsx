@@ -6,10 +6,22 @@ import { ScheduleContext } from "../../context/createContext";
 
 function SchedulePost() {
   const [modal, setModal] = useState(false);
+  const [schedule, setSchedule] = useState({
+    platform: "",
+    postType: "",
+    postTitle: "",
+    date: "",
+    time: "",
+  });
+  const [err, setErr] = useState({});
 
   const props = {
     modal,
     setModal,
+    schedule,
+    setSchedule,
+    err,
+    setErr,
   };
 
   return (

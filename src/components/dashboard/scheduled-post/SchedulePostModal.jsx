@@ -1,9 +1,13 @@
 import { useContext } from "react";
 import { RxCross1 } from "react-icons/rx";
 import { ScheduleContext } from "../../context/createContext";
+import { validateDateAndTime, validationSchedulePost } from "./validation";
 
 function SchedulePostModal() {
-  const { modal, setModal } = useContext(ScheduleContext);
+  const { modal, setModal, schedule, setSchedule, err, setErr } =
+    useContext(ScheduleContext);
+
+  const { platform, postType, postTitle, date, time } = schedule;
 
   const handleModal = () => {
     setModal(false);
@@ -12,6 +16,52 @@ function SchedulePostModal() {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+
+  const handleSchedule = (e) => {
+    const { name, value } = e.target;
+    setSchedule((pre) => ({ ...pre, [name]: value }));
+  };
+  // ----------------------------------------------- Handle Date  ---------------------------------------------
+  const today = new Date().toISOString().split("T")[0];
+
+  function isPastDate(date) {
+    return date < today;
+  }
+  const handleDate = (e) => {
+    const { value, name } = e.target;
+    if (isPastDate(value)) {
+      return;
+    }
+    setSchedule((prev) => {
+      if (prev.time && !validateDateAndTime(value, prev.time)) {
+        return { ...prev, [name]: value, time: "" };
+      }
+      return { ...prev, [name]: value };
+    });
+  };
+  // ---------------------------------------------------- Handle Time -----------------------------------------------
+
+  const handleTime = (e) => {
+    const { value, name } = e.target;
+    let selectTime = {};
+    setErr({ time: "" });
+    if (!date) {
+      alert("Please select Date ");
+      selectTime = { [name]: "" };
+      return;
+    }
+    if (!validateDateAndTime(date, value)) {
+      alert("You have selected past time");
+      selectTime = { [name]: "" };
+      return;
+    }
+    selectTime = { [name]: value };
+
+    setSchedule((prev) => {
+      return { ...prev, ...selectTime };
+    });
+  };
+
   return (
     <div
       id="scheduleModal"
@@ -47,6 +97,9 @@ function SchedulePostModal() {
                 Platform
               </label>
               <select
+                name="platform"
+                value={platform}
+                onChange={handleSchedule}
                 id="postPlatform"
                 className="w-full bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
                 required
@@ -67,6 +120,9 @@ function SchedulePostModal() {
                 Post Type
               </label>
               <select
+                name="postType"
+                value={postType}
+                onChange={handleSchedule}
                 id="postType"
                 className="w-full bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
                 required
@@ -88,6 +144,9 @@ function SchedulePostModal() {
               Content
             </label>
             <textarea
+              name="postTitle"
+              value={postTitle}
+              onChange={handleSchedule}
               id="postContent"
               rows="4"
               className="w-full bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -106,6 +165,10 @@ function SchedulePostModal() {
               </label>
               <input
                 type="date"
+                name="date"
+                value={date}
+                onChange={handleDate}
+                min={today}
                 id="postDate"
                 className="w-full bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
@@ -120,10 +183,16 @@ function SchedulePostModal() {
               </label>
               <input
                 type="time"
+                name="time"
+                value={time}
+                onChange={handleTime}
                 id="postTime"
                 className="w-full bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 "
                 required
               />
+              <span className="text-red-500 text-sm">
+                {err.time && err.time}
+              </span>
             </div>
           </div>
 
