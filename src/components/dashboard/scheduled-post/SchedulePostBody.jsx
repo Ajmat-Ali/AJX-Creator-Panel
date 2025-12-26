@@ -1,25 +1,48 @@
+import { useContext } from "react";
+import DisplaySchedule from "./DisplaySchedule";
+import { ScheduleContext } from "../../context/createContext";
+
 function SchedulePostBody() {
+  const { searchedSchedule, setSearchedSchedule } = useContext(ScheduleContext);
+  const { type, platform } = searchedSchedule;
+
+  const handleChange = (e) => {
+    const { value, name } = e.target;
+    setSearchedSchedule((pre) => ({ ...pre, [name]: value }));
+  };
   return (
     <div className="bg-white rounded-xl shadow-md p-6 mb-8">
-      <div className="flex items-center mb-6">
-        <div className="relative flex-1">
-          <input
-            type="text"
-            placeholder="Search scheduled posts..."
-            className="w-full bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <i
-            data-feather="search"
-            className="absolute left-3 top-3 text-gray-500"
-          ></i>
+      <div className="flex mb-6">
+        <div className=" -border">
+          <select
+            name="type"
+            value={type}
+            onChange={handleChange}
+            className="ml-4 bg-gray-100 border border-gray-300 text-gray-700 py-2 px-20 rounded-lg focus:outline-none cursor-pointer"
+          >
+            <option value="all">All type</option>
+            <option value="image">Image</option>
+            <option value="video">Video</option>
+            <option value="text">Text</option>
+            <option value="story">Story</option>
+          </select>
         </div>
-        <select className="ml-4 bg-gray-100 border border-gray-300 text-gray-700 py-2 px-4 rounded-lg focus:outline-none cursor-pointer">
-          <option>All Platforms</option>
-          <option>Instagram</option>
-          <option>YouTube</option>
-          <option>Twitter</option>
-          <option>Facebook</option>
-        </select>
+        <div className=" -border">
+          <select
+            name="platform"
+            value={platform}
+            onChange={handleChange}
+            className="ml-4 bg-gray-100 border border-gray-300 text-gray-700 py-2 px-20 rounded-lg focus:outline-none cursor-pointer"
+          >
+            <option value={"allPlatform"}>All Platforms</option>
+            <option value={"instagram"}>Instagram</option>
+            <option value={"youtube"}>YouTube</option>
+            <option value={"twitter"}>Twitter</option>
+            <option value={"facebook"}>Facebook</option>
+            <option value={"linkedin"}>Linkedin</option>
+            <option value={"all"}>All</option>
+          </select>
+        </div>
       </div>
 
       <div className="overflow-x-auto">
@@ -34,7 +57,7 @@ function SchedulePostBody() {
             </tr>
           </thead>
           <tbody id="scheduledPostsContainer">
-            {/* <!-- Scheduled posts will be loaded here --> */}
+            <DisplaySchedule />
           </tbody>
         </table>
       </div>

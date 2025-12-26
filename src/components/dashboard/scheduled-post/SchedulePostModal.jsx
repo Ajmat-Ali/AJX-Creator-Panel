@@ -4,7 +4,7 @@ import { ScheduleContext } from "../../context/createContext";
 import { validateDateAndTime, validationSchedulePost } from "./validation";
 
 function SchedulePostModal() {
-  const { modal, setModal, schedule, setSchedule, err, setErr } =
+  const { modal, setModal, schedule, setSchedule, err, setErr, addSchedule } =
     useContext(ScheduleContext);
 
   const { platform, postType, postTitle, date, time } = schedule;
@@ -13,9 +13,29 @@ function SchedulePostModal() {
     setModal(false);
   };
 
+  // ----------------------------------------------- Handle Submit  ---------------------------------------------
+  const validate = validationSchedulePost(schedule);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    const { status, err } = validate();
+
+    if (status) {
+      setErr(err);
+      return;
+    }
+    addSchedule(schedule);
+    setSchedule({
+      platform: "",
+      postType: "",
+      postTitle: "",
+      date: "",
+      time: "",
+    });
+    setErr({});
+    alert("Successful submitted");
   };
+  // ----------------------------------------------- Handle Schedule  ---------------------------------------------
 
   const handleSchedule = (e) => {
     const { name, value } = e.target;
@@ -45,17 +65,16 @@ function SchedulePostModal() {
     const { value, name } = e.target;
     let selectTime = {};
     setErr({ time: "" });
+    selectTime = { [name]: value };
+
     if (!date) {
       alert("Please select Date ");
       selectTime = { [name]: "" };
-      return;
     }
     if (!validateDateAndTime(date, value)) {
       alert("You have selected past time");
       selectTime = { [name]: "" };
-      return;
     }
-    selectTime = { [name]: value };
 
     setSchedule((prev) => {
       return { ...prev, ...selectTime };
@@ -110,7 +129,11 @@ function SchedulePostModal() {
                 <option value="youtube">YouTube</option>
                 <option value="twitter">Twitter</option>
                 <option value="facebook">Facebook</option>
+                <option value="linkedin">Linkedin</option>
               </select>
+              <span className="text-red-500 text-sm">
+                {err.platform && err.platform}
+              </span>
             </div>
             <div>
               <label
@@ -133,6 +156,9 @@ function SchedulePostModal() {
                 <option value="text">Text</option>
                 <option value="story">Story</option>
               </select>
+              <span className="text-red-500 text-sm">
+                {err.postType && err.postType}
+              </span>
             </div>
           </div>
 
@@ -153,6 +179,9 @@ function SchedulePostModal() {
               placeholder="Write your post content here..."
               required
             ></textarea>
+            <span className="text-red-500 text-sm">
+              {err.postTitle && err.postTitle}
+            </span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -173,6 +202,9 @@ function SchedulePostModal() {
                 className="w-full bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
+              <span className="text-red-500 text-sm">
+                {err.date && err.date}
+              </span>
             </div>
             <div>
               <label

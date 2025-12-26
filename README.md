@@ -44,7 +44,7 @@ After successful login, users can access the dashboard with the following sectio
 - **&#x2718; Dashboard Home** (Coming Soon)
 - **&#x2714; Content Ideas:-** Creator can write idea and save it to localStorage, Search ideas based on title (Debounce) and delete idea
 - **&#x2714; Script Generator:-** Allowed user to generate script (false), save, load saved, delete, copy, clear script
-- **&#x2718; Scheduled Posts** (Coming Soon)
+- **&#x2714; Scheduled Posts:-** schedule your post, update, delete, filter (based on platform, post type)
 - **&#x2718; Content Performance** (Coming Soon)
 - **&#x2714; Logout**:- After logout user will navigate to landing page
 
@@ -108,11 +108,22 @@ src/
 ||||----ScriptShimmer.jsx
 |||
 |||
+|||---schedule-post/
+||||----SchedulePost.jsx
+||||----SchedulePostHeader.jsx
+||||----SchedulePostBody.jsx
+||||----SchedulePostModal.jsx
+||||----DisplaySchedule.jsx
+||||----DisplayCard.jsx
+||||----ScheduleShimmer.jsx
+||||----PlatFormIcon.jsx
+||||----validation.js
+|||
+|||
 |||---DashboardMain.jsx
 |||---DashboardSideBar.jsx
 |||---DashboardTop.jsx
 |||---DashboardHome.jsx
-|||---ScheduledPost.jsx
 |||---GrowthTracker.jsx
 ||
 ||--HomePageComponents/
