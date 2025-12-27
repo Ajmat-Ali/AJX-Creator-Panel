@@ -46,7 +46,7 @@ function AddIdeaModel() {
         className="absolute inset-0 bg-black opacity-50"
         onClick={handleModal}
       ></div>
-      <div className="relative z-10 bg-white rounded-xl p-6 w-full max-w-md | max-sm:w-11/12 |">
+      <div className="relative z-10 bg-white rounded-xl p-6 w-full max-w-md max-h-[90vh] overflow-y-auto | max-sm:w-11/12 |">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-semibold text-gray-800 |  max-sm22:text-lg">
             Add New Content Idea

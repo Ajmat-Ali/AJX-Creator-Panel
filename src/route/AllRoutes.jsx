@@ -10,7 +10,7 @@ import PrivateRoute from "../components/PrivateRoute";
 import Review from "../components/steps/Review";
 
 // ------------------------------------------- Dashboard Components Import ------------------------------
-import DashboardHome from "../components/dashboard/DashboardHome";
+import DashboardHome from "../components/dashboard/dashboard-home/DashboardHome";
 import ContentIdea from "../components/dashboard/content-Idea/ContentIdea";
 import ScriptGenerator from "../components/dashboard/script-generator/Script";
 import SchedulePost from "../components/dashboard/scheduled-post/SchedulePost";

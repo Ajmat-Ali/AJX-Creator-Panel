@@ -90,7 +90,7 @@ function SchedulePost() {
   };
 
   return (
-    <div className="flex-1 p-8 mt-16">
+    <div className="flex-1 p-8 mt-16 max-sm30:p-2">
       <ScheduleContext.Provider value={props}>
         <SchedulePostHeader />
         <SchedulePostBody />

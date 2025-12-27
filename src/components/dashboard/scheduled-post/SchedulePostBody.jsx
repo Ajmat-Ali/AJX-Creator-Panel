@@ -11,14 +11,14 @@ function SchedulePostBody() {
     setSearchedSchedule((pre) => ({ ...pre, [name]: value }));
   };
   return (
-    <div className="bg-white rounded-xl shadow-md p-6 mb-8">
-      <div className="flex mb-6">
-        <div className=" -border">
+    <div className="bg-white rounded-xl shadow-md p-6 mb-8 ">
+      <div className="flex mb-6  | max-sm30:flex-col max-sm30:gap-y-5 ">
+        <div>
           <select
             name="type"
             value={type}
             onChange={handleChange}
-            className="ml-4 bg-gray-100 border border-gray-300 text-gray-700 py-2 px-20 rounded-lg focus:outline-none cursor-pointer"
+            className="max-sm30:w-full sm30:ml-4 bg-gray-100 border border-gray-300 text-gray-700 py-2 px-20 rounded-lg focus:outline-none cursor-pointer | max-lg:px-10 | max-sm:px-5 | max-sm30:px-2"
           >
             <option value="all">All type</option>
             <option value="image">Image</option>
@@ -27,12 +27,12 @@ function SchedulePostBody() {
             <option value="story">Story</option>
           </select>
         </div>
-        <div className=" -border">
+        <div>
           <select
             name="platform"
             value={platform}
             onChange={handleChange}
-            className="ml-4 bg-gray-100 border border-gray-300 text-gray-700 py-2 px-20 rounded-lg focus:outline-none cursor-pointer"
+            className="max-sm30:w-full sm30:ml-4 bg-gray-100 border border-gray-300 text-gray-700 py-2 px-20 rounded-lg focus:outline-none cursor-pointer | max-lg:px-10 | max-sm:px-5 | max-sm30:px-2"
           >
             <option value={"allPlatform"}>All Platforms</option>
             <option value={"instagram"}>Instagram</option>
@@ -45,21 +45,8 @@ function SchedulePostBody() {
         </div>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full">
-          <thead>
-            <tr className="text-left text-gray-500 border-b border-gray-200 ">
-              <th className="pb-3">Platform</th>
-              <th className="pb-3">Content</th>
-              <th className="pb-3">Scheduled Time</th>
-              <th className="pb-3">Status</th>
-              <th className="pb-3 text-right">Actions</th>
-            </tr>
-          </thead>
-          <tbody id="scheduledPostsContainer">
-            <DisplaySchedule />
-          </tbody>
-        </table>
+      <div>
+        <DisplaySchedule />
       </div>
     </div>
   );
