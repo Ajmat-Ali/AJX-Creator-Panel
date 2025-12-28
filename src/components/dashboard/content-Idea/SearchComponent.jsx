@@ -1,5 +1,8 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { IdeaContext } from "../../context/createContext";
+import {
+  GlobalContentIdeaContextCreated,
+  IdeaContext,
+} from "../../context/createContext";
 import { FiSearch } from "react-icons/fi";
 import { debounce } from "../../../utils/debounce";
 
@@ -7,8 +10,9 @@ function SearchComponent() {
   const [searchErr, setSearchErr] = useState("");
   let debounceRef = useRef(null);
 
-  const { storedIdeas, setSearchedData, search, setSearch } =
-    useContext(IdeaContext);
+  const { storedIdeas, setSearchedData, search, setSearch } = useContext(
+    GlobalContentIdeaContextCreated
+  );
   const storedIdeasRef = useRef(storedIdeas);
 
   useEffect(() => {

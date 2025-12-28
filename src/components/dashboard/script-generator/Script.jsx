@@ -13,7 +13,7 @@ function Script() {
   });
 
   const [err, setErr] = useState({});
-  const [message, setMessage] = useState(""); // Copy Message
+  const [message, setMessage] = useState("");
   const [savedScript, setSavedScript] = useState(
     JSON.parse(localStorage.getItem("scripts")) || []
   );

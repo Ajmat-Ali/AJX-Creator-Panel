@@ -5,13 +5,20 @@ import App from "./App.jsx";
 import { BrowserRouter } from "react-router";
 // import AuthContext from "./components/AuthContext.jsx";
 import AuthContext from "./components/context/AuthContext.jsx";
+import AllContext from "./components/context/AllContext.jsx";
+import GlobalContentIdeaContext from "./components/context/GlobalContentIdeaContext.jsx";
+import GlobalSchedulePostContext from "./components/context/GlobalSchedulePostContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthContext>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <GlobalContentIdeaContext>
+        <GlobalSchedulePostContext>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </GlobalSchedulePostContext>
+      </GlobalContentIdeaContext>
     </AuthContext>
   </StrictMode>
 );

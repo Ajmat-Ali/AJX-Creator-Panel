@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import DisplaySchedule from "./DisplaySchedule";
-import { ScheduleContext } from "../../context/createContext";
+import { GlobalSchedulePostContextCreated } from "../../context/createContext";
 
 function SchedulePostBody() {
-  const { searchedSchedule, setSearchedSchedule } = useContext(ScheduleContext);
+  const { searchedSchedule, setSearchedSchedule } = useContext(
+    GlobalSchedulePostContextCreated
+  );
+
   const { type, platform } = searchedSchedule;
 
   const handleChange = (e) => {

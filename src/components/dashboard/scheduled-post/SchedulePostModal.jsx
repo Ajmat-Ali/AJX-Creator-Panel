@@ -1,11 +1,16 @@
 import { useContext } from "react";
 import { RxCross1 } from "react-icons/rx";
-import { ScheduleContext } from "../../context/createContext";
+import {
+  GlobalSchedulePostContextCreated,
+  ScheduleContext,
+} from "../../context/createContext";
 import { validateDateAndTime, validationSchedulePost } from "./validation";
 
 function SchedulePostModal() {
-  const { modal, setModal, schedule, setSchedule, err, setErr, addSchedule } =
-    useContext(ScheduleContext);
+  const { modal, setModal } = useContext(ScheduleContext);
+  const { schedule, setSchedule, err, setErr, addSchedule } = useContext(
+    GlobalSchedulePostContextCreated
+  );
 
   const { platform, postType, postTitle, date, time } = schedule;
 
@@ -34,6 +39,7 @@ function SchedulePostModal() {
     });
     setErr({});
     alert("Successful submitted");
+    handleModal();
   };
   // ----------------------------------------------- Handle Schedule  ---------------------------------------------
 

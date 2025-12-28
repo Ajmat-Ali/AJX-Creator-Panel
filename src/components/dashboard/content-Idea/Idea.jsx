@@ -1,10 +1,10 @@
 import { RiDeleteBinLine } from "react-icons/ri";
 import { FiFileText } from "react-icons/fi";
 import { useContext } from "react";
-import { IdeaContext } from "../../context/createContext";
+import { GlobalContentIdeaContextCreated } from "../../context/createContext";
 
 const Idea = ({ idea }) => {
-  const { deleteIdea } = useContext(IdeaContext);
+  const { deleteIdea } = useContext(GlobalContentIdeaContextCreated);
 
   const handleDelete = (id) => {
     deleteIdea(id);

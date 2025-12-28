@@ -38,6 +38,7 @@ function FormGenerator({ idea, setIdea, err, setErr, setScript }) {
       setIdea((pre) => {
         return { ...pre, ["script"]: generatedScriptVal };
       });
+      alert("Your script has been generated!");
       return;
     }
   };

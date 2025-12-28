@@ -6,6 +6,7 @@ function Header({ idea, setErr, addScript }) {
   const handleSaveScript = () => {
     if (!validation()) {
       addScript(idea);
+      alert("Script saved");
       return;
     }
     alert("No Script Generated");

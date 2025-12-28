@@ -5,14 +5,21 @@ import { CiClock2 } from "react-icons/ci";
 
 import PlatFormIcon from "./PlatFormIcon";
 import { useContext } from "react";
-import { ScheduleContext } from "../../context/createContext";
+import {
+  GlobalSchedulePostContextCreated,
+  ScheduleContext,
+} from "../../context/createContext";
 function DisplayCard({ schedulePost }) {
   const { id, platform, postType, postTitle, date, time } = schedulePost;
-  const { updateSchedulePost, deleteSchedulePost } =
-    useContext(ScheduleContext);
+
+  const { setModal } = useContext(ScheduleContext);
+  const { updateSchedulePost, deleteSchedulePost } = useContext(
+    GlobalSchedulePostContextCreated
+  );
 
   const handleEditSchedule = (id) => {
     updateSchedulePost(id);
+    setModal(true);
   };
 
   const handleDeleteSchedule = (id) => {

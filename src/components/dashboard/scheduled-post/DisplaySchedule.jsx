@@ -1,10 +1,13 @@
 import { useContext } from "react";
-import { ScheduleContext } from "../../context/createContext";
+import {
+  GlobalSchedulePostContextCreated,
+  ScheduleContext,
+} from "../../context/createContext";
 import ScheduleShimmer from "./ScheduleShimmer";
 import DisplayCard from "./DisplayCard";
 
 function DisplaySchedule() {
-  const { scheduledPosts } = useContext(ScheduleContext);
+  const { scheduledPosts } = useContext(GlobalSchedulePostContextCreated);
   return scheduledPosts?.length < 1 ? (
     <div>
       <ScheduleShimmer />
