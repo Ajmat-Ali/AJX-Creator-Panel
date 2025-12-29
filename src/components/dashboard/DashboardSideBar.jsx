@@ -23,7 +23,7 @@ function DashboardSideBar() {
   };
 
   return (
-    <div className="p-5 pr-8 border-r-4 border-black overflow-y-auto | max-md:w-screen flex flex-col gap-y-5 max-md:flex-row max-md:gap-x-15 max-md:justify-evenly">
+    <div className="p-5 pr-8 shadow-2xl  border-double  overflow-y-auto | max-md:w-screen flex flex-col gap-y-5 max-md:flex-row max-md:gap-x-15 max-md:justify-evenly">
       <div className="flex justify-end max-md:hidden">
         <button
           onClick={handleToggle}

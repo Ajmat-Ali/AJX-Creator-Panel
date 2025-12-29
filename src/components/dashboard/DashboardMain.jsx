@@ -3,7 +3,7 @@ import DashboardTopBar from "./DashBoardTopBar";
 
 function DashboardMain() {
   return (
-    <div className="flex-1 border-5 border-red-700 overflow-auto">
+    <div className="flex-1  overflow-auto">
       <div>
         <DashboardTopBar />
       </div>

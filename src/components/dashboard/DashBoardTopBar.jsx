@@ -7,7 +7,7 @@ function DashboardTopBar() {
   const { user } = useContext(LoginContext);
 
   return (
-    <div className="p-4 border border-y-green-500 flex justify-end gap-x-20 flex-wrap | max-md:justify-between max-md:gap-10 | max-sm22:gap-x-2 max-sm22:gap-y-5">
+    <div className="p-4  flex justify-end gap-x-20 flex-wrap | max-md:justify-between max-md:gap-10 | max-sm22:gap-x-2 max-sm22:gap-y-5">
       <div className="relative w-44">
         <select
           className="cursor-pointer appearance-none w-full px-10 py-2 text-sm font-medium

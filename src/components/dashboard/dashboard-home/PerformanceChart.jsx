@@ -1,7 +1,7 @@
 function PerformanceChart() {
   return (
-    <div className="bg-white rounded-xl shadow-md p-6 mb-8">
-      <div className="flex justify-between items-center mb-6">
+    <div className="bg-white rounded-xl shadow-md p-6 mb-8 max-sm22:px-2">
+      <div className="flex justify-between items-center mb-6 flex-wrap max-sm30:flex-col max-sm30:gap-y-5">
         <h2 className="text-xl font-semibold text-gray-800">
           Recent Performance
         </h2>
