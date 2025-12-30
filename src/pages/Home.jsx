@@ -12,7 +12,7 @@ import Footer from "../components/HomePageComponents/Footer";
 
 function Home() {
   return (
-    <div className="py-4">
+    <div className="py-4 bg-gray-50">
       <Header />
       <Main />
       <WhyChoose />

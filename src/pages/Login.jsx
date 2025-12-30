@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router";
-import LoginValidation from "../config/LoginValidation";
+import LoginValidation from "../utils/LoginValidation";
 import { useNavigate } from "react-router";
 import { LoginContext } from "../components/context/createContext";
 
@@ -36,44 +36,57 @@ function Login() {
   };
 
   return (
-    <div className=" h-screen flex flex-col justify-center items-center ">
-      <h1>Login Page</h1>
-      <div className="border border-red-500 w-4/12 m-auto p-4 flex flex-col gap-y-5 pt-10 max-lg:w-6/12 max-sm:w-8/12 max-sm30:w-10/12 max-sm22:w-12/12">
+    <div className="h-screen flex flex-col justify-center items-center bg-linear-to-br from-gray-100 to-gray-200">
+      <h1 className="text-3xl font-semibold text-gray-800 mb-6">
+        Welcome Back 👋
+      </h1>
+
+      <div className="w-4/12 max-lg:w-6/12 max-sm:w-8/12 max-sm30:w-10/12 max-sm22:w-12/12 bg-white rounded-xl shadow-lg p-8 flex flex-col gap-y-5">
         <div>
           <input
             type="text"
-            placeholder="Email or User-Name "
+            placeholder="Email or Username"
             id="userCredential"
             onChange={handleChange}
-            className="w-full border border-gray-400 rounded-md px-4 py-2"
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 
+                   focus:outline-none focus:ring-2 focus:ring-red-400 
+                   focus:border-red-400 transition"
           />
         </div>
+
         <div>
           <input
             type="password"
             id="password"
             placeholder="Password"
             onChange={handleChange}
-            className="w-full border border-gray-400 rounded-md px-4 py-2 "
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 
+                   focus:outline-none focus:ring-2 focus:ring-red-400 
+                   focus:border-red-400 transition"
           />
         </div>
-        <div className="text-center">
-          {" "}
-          <span className="text-red-500 font-sm">
+
+        <div className="text-center min-h-[20px]">
+          <span className="text-sm text-red-500 font-medium">
             {loginError && loginError}
           </span>
         </div>
+
         <button
           onClick={handleLogin}
-          className="bg-red-500 text-white cursor-pointer py-2 px-4 w-fit m-auto rounded-lg"
+          className="bg-red-500 hover:bg-red-600 active:scale-95 
+                 text-white font-semibold py-3 px-6 
+                 rounded-lg transition-all duration-200 
+                 shadow-md w-full"
         >
           Login
         </button>
-        <div className="text-center m-2">
-          Don't have account?{" "}
-          <span className="font-bold text-blue-500 cursor-pointer">
+
+        <div className="text-center text-sm text-gray-600 mt-2">
+          Don&apos;t have an account?{" "}
+          <span className="font-semibold text-blue-600 hover:underline cursor-pointer">
             <Link to={"/signin"}>Register Here</Link>
-          </span>{" "}
+          </span>
         </div>
       </div>
     </div>

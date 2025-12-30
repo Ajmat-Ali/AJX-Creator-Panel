@@ -2,17 +2,16 @@ export default function HomePageBox({ item }) {
   const { Icon, title, description, accent, size } = item;
 
   return (
-    <div className="border border-red-600 w-3/12 py-5 px-7 flex flex-col gap-y-10  | max-lg:px-5 max-lg:w-4/12 | max-md:w-6/12 | max-sm:w-7/12 | max-sm30:w-9/12 max-sm30:gap-y-5 max-sm22:w-12/12">
-      <div className="">
-        <Icon
-          size={size}
-          className="text-center m-auto font-bold bg-gray-600 rounded-md"
-          color="white"
-        />
+    <div className="w-3/12 min-w-[260px] bg-white rounded-2xl p-8 flex flex-col gap-6 text-center shadow-md hover:shadow-xl transition max-lg:w-4/12 max-md:w-6/12 max-sm:w-10/12">
+      <div className="flex justify-center">
+        <Icon size={36} className="p-3 bg-black text-white rounded-xl" />
       </div>
-      <h2 className="text-xl font-semibold">{title}</h2>
-      <p className="text-gray-900">
-        {description} <span className="block mt-4">{accent}</span>
+
+      <h2 className="text-lg font-bold text-gray-900">{title}</h2>
+
+      <p className="text-gray-600 text-sm leading-relaxed">
+        {description}
+        <span className="block mt-3 font-medium text-gray-800">{accent}</span>
       </p>
     </div>
   );

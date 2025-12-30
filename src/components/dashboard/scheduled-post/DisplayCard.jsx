@@ -27,10 +27,10 @@ function DisplayCard({ schedulePost }) {
   };
 
   return (
-    <div className=" bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl  hover:-translate-y-1 transition-all duration-300   ease-out  overflow-hidden">
+    <div className=" bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl  hover:-translate-y-1 transition-all duration-300   ease-out  overflow-hidden ">
       <div className="p-6 ">
         {/* Header */}
-        <div className="flex items-center justify-between mb-4 ">
+        <div className="flex items-center justify-between mb-4 flex-wrap">
           <div className="flex items-center space-x-3">
             <div className="bg-linear-to-br from-primary-100 to-primary-200 p-2.5 rounded-xl shadow-inner group-hover:shadow-md transition  ">
               <span
@@ -59,7 +59,7 @@ function DisplayCard({ schedulePost }) {
         </div>
 
         {/* Meta */}
-        <div className="flex items-center space-x-5 text-sm text-gray-500 mb-5    ">
+        <div className="flex items-center space-x-5 text-sm text-gray-500 mb-5 flex-wrap">
           <div className="flex items-center hover:text-gray-800 transition">
             <span className="w-4 h-4 mr-1">
               <CiCalendar />

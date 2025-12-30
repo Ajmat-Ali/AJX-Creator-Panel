@@ -10,34 +10,72 @@ import { Link } from "react-router";
 export default function Main() {
   return (
     <main>
-      <div className="border flex w-11/12 m-auto mb-10 justify-between pr-4 | max-md:flex-col | max-md:p-0">
-        <div className="border border-red-500 flex flex-col gap-y-5 w-5/12 py-5 | max-lg:w-8/12 | max-md:w-12/12 max-md:text-center">
-          <h3 className=" font-semibold text-3xl | max-lg:text-2xl">
-            WE ARE HERE
+      <div
+        className="w-11/12 mx-auto mb-20 flex justify-between items-center 
+                  max-md:flex-col max-md:gap-12"
+      >
+        {/* ---------------- Left Content ---------------- */}
+        <div
+          className="flex flex-col gap-y-6 w-5/12 py-10 
+                    max-lg:w-8/12 max-md:w-full max-md:text-center"
+        >
+          <h3 className="text-sm font-semibold tracking-widest text-blue-600 uppercase">
+            We are here
           </h3>
-          <h1 className="font-bold text-6xl | max-xl:text-5xl | max-sm22:text-4xl">
-            MANAGE YOUR SOCIAL MEDIA
+
+          <h1
+            className="font-extrabold text-6xl leading-tight text-gray-900 
+                     max-xl:text-5xl max-sm22:text-4xl"
+          >
+            Manage Your <br className="max-md:hidden" />
+            Social Media
           </h1>
-          <p className="font-semibold">
-            Manage ideas, schedule posts, and track growth like pro.
+
+          <p
+            className="text-gray-600 text-lg font-medium max-w-xl 
+                    max-md:mx-auto"
+          >
+            Manage ideas, schedule posts, and track growth like a pro — all in
+            one powerful dashboard.
           </p>
-          <div className="my-8">
-            <button className="font-semibold bg-black text-gray-300 p-2 rounded-2xl px-3 cursor-pointer">
-              <Link to={"/dashboard"}>Start free today</Link>
+
+          <div className="mt-6">
+            <button
+              className="bg-blue-600 text-white font-semibold px-6 py-3 
+                           rounded-xl hover:bg-blue-700 transition 
+                           shadow-md active:scale-95"
+            >
+              <Link to="/dashboard">Start free today</Link>
             </button>
           </div>
-          <div className="flex gap-x-5 max-md:justify-center">
-            <BsInstagram size={30} color="#E1306C" />
-            <BsYoutube size={30} color="#FF0000" />
-            <BsFacebook size={30} color="#1877F2" />
-            <BsTwitter size={30} color="#000000" />
+
+          <div className="flex gap-x-6 mt-8 max-md:justify-center">
+            <BsInstagram
+              size={28}
+              className="text-pink-600 hover:scale-110 transition"
+            />
+            <BsYoutube
+              size={28}
+              className="text-red-600 hover:scale-110 transition"
+            />
+            <BsFacebook
+              size={28}
+              className="text-blue-600 hover:scale-110 transition"
+            />
+            <BsTwitter
+              size={28}
+              className="text-black hover:scale-110 transition"
+            />
           </div>
         </div>
-        <div className="border">
+
+        {/* ---------------- Right Image ---------------- */}
+        <div className="flex justify-center w-5/12 max-md:w-full">
           <img
             src="https://placehold.co/400"
-            alt=""
-            className="rounded-full "
+            alt="Dashboard Preview"
+            className="w-96 h-96 object-cover rounded-3xl shadow-xl 
+                   max-sm:w-72 max-sm:h-72"
           />
         </div>
       </div>

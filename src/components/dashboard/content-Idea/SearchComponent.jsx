@@ -53,7 +53,7 @@ function SearchComponent() {
 
   return (
     <div>
-      <div className="flex items-center mb-4 | max-sm30:relative max-sm30:mx-3">
+      <div className="flex items-center mb-4 | max-sm30:relative max-sm30:mx-3 ">
         <input
           value={search}
           onChange={handleChange}

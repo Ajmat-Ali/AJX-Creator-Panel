@@ -14,7 +14,7 @@ function ContentIdea() {
   };
 
   return (
-    <div className="flex">
+    <div className="flex ">
       <IdeaContext.Provider value={props}>
         <ContentIdeaMain />
         <AddIdeaModel />

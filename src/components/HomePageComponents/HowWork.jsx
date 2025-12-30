@@ -8,14 +8,20 @@ import { BiDownArrowAlt } from "react-icons/bi";
 
 export default function HowWork() {
   return (
-    <div className="border w-11/12 m-auto py-8 mb-10">
-      <div>
-        <h1 className="text-2xl text-center font-bold">How It Works</h1>
-      </div>
-      <div className="border flex text-center gap-10 justify-evenly mt-8 | max-lg:justify-center max-lg:gap-5 | max-md:flex-col max-md:items-center max-md:gap-7 | max-sm:gap-5 max-sm30:gap-x-2  max-sm22:gap-x-0">
-        {cards.map((card, ind, cards) => {
-          return <HowWorkCard card={card} key={card.id} />;
-        })}
+    <div className="w-11/12 mx-auto py-16 mb-20">
+      <h1 className="text-3xl font-extrabold text-center text-gray-900">
+        How It Works
+      </h1>
+
+      <p className="text-center text-gray-600 mt-3 max-w-xl mx-auto">
+        Get started in minutes. Follow these simple steps to manage your content
+        like a pro.
+      </p>
+
+      <div className="flex items-center justify-center gap-10 mt-14 max-lg:gap-6 max-md:flex-col">
+        {cards.map((card) => (
+          <HowWorkCard card={card} key={card.id} />
+        ))}
       </div>
     </div>
   );
@@ -24,17 +30,23 @@ export default function HowWork() {
 function HowWorkCard({ card }) {
   if (card.type === "arrow") {
     return (
-      <div className="flex flex-col justify-center items-center gap-y-2 m-2">
+      <div className="flex items-center justify-center text-gray-400">
         <ResponsiveArrow />
       </div>
     );
   }
+
   const { Icon, size, title, subTitle } = card;
+
   return (
-    <div className="flex flex-col justify-center items-center gap-y-2 w-3/12 | max-sm:w-4/12 | max-sm30:w-5/12 | max-sm22:w-8/12">
-      <div>{<Icon size={size} />}</div>
-      <p className="text-md">{title} </p>
-      <p className="text-sm">{subTitle}</p>
+    <div className="flex flex-col items-center text-center gap-4 w-3/12 max-md:w-8/12">
+      <div className="p-4 rounded-2xl bg-black text-white shadow-lg">
+        <Icon size={size} />
+      </div>
+
+      <h3 className="text-lg font-bold text-gray-900">{title}</h3>
+
+      <p className="text-sm text-gray-600 leading-relaxed">{subTitle}</p>
     </div>
   );
 }
@@ -42,8 +54,11 @@ function HowWorkCard({ card }) {
 function ResponsiveArrow() {
   return (
     <>
-      <MdOutlineArrowRightAlt size={50} className="max-md:hidden" />
-      <BiDownArrowAlt size={40} className="md:hidden" />
+      <MdOutlineArrowRightAlt
+        size={48}
+        className="text-gray-500 max-md:hidden"
+      />
+      <BiDownArrowAlt size={36} className="text-gray-500 md:hidden" />
     </>
   );
 }

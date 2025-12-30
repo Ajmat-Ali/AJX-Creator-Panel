@@ -14,7 +14,7 @@ function SchedulePostBody() {
     setSearchedSchedule((pre) => ({ ...pre, [name]: value }));
   };
   return (
-    <div className="bg-white rounded-xl shadow-md p-6 mb-8 ">
+    <div className="bg-white rounded-xl shadow-md p-6 mb-8">
       <div className="flex mb-6  | max-sm30:flex-col max-sm30:gap-y-5 ">
         <div>
           <select

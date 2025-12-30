@@ -11,26 +11,45 @@ function Step3Preference({ formData, dispatch }) {
     });
   };
   return (
-    <div className="border-2 border-blue-600 w-4/12 m-auto py-0 px-6 | max-xl:w-6/12 | max-md:w-8/12 | max-sm:w-7/12 max-sm30:w-10/12 max-sm22:w-12/12  max-sm22:px-2">
-      <h2 className="text-xl text-center font-semibold">Preference Details</h2>
+    <div
+      className="w-4/12 max-xl:w-6/12 max-md:w-8/12 max-sm:w-7/12 max-sm30:w-10/12 max-sm22:w-12/12 
+                bg-white shadow-lg rounded-xl m-auto px-8 py-10 max-sm22:px-4"
+    >
+      <h2 className="text-xl font-semibold text-center text-gray-800 mb-8">
+        Preference Details
+      </h2>
+
       <form>
-        <div className="flex justify-center gap-5 mb-4 max-md:flex-col">
+        <div className="flex gap-4 mb-5 max-md:flex-col">
           <div className="flex flex-col gap-1 w-6/12 max-md:w-full">
-            <label htmlFor="contentGoal">Content Goal</label>
+            <label
+              className="text-sm font-medium text-gray-700"
+              htmlFor="contentGoal"
+            >
+              Content Goal
+            </label>
             <input
               type="text"
               placeholder="Your Content Goal"
               id="contentGoal"
-              className="w-full border border-gray-400 rounded-md px-4 py-2 pr-10"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 
+                     focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
               value={contentGoal}
               onChange={handleChange}
             />
           </div>
+
           <div className="flex flex-col gap-1 w-6/12 max-md:w-full">
-            <label htmlFor="experience">Work Style</label>
+            <label
+              className="text-sm font-medium text-gray-700"
+              htmlFor="experience"
+            >
+              Work Style
+            </label>
             <select
-              className="w-full border border-gray-400 rounded-md px-4 py-2 pr-10"
               id="experience"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 
+                     focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
               value={experience}
               onChange={handleChange}
             >
@@ -40,18 +59,23 @@ function Step3Preference({ formData, dispatch }) {
             </select>
           </div>
         </div>
-        <div className="flex flex-col gap-1 mb-4">
-          <label htmlFor="weeklyPostingGoal">
-            Weekly Posting Goal (Post per Week)
+
+        <div className="flex flex-col gap-1 mb-2">
+          <label
+            htmlFor="weeklyPostingGoal"
+            className="text-sm font-medium text-gray-700"
+          >
+            Weekly Posting Goal (Posts per Week)
           </label>
           <select
             id="weeklyPostingGoal"
-            className="w-full border border-gray-400 rounded-md px-4 py-2 pr-10  max-md:w-full"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 
+                   focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
             value={weeklyPostingGoal}
             onChange={handleChange}
           >
             <option value="1">1</option>
-            <option value="7">1-7</option>
+            <option value="7">1–7</option>
             <option value="7+">7+</option>
           </select>
         </div>

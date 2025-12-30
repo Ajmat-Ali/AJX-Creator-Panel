@@ -11,7 +11,7 @@ const Idea = ({ idea }) => {
   };
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow">
+    <div className="bg-white border border-gray-200 rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow ">
       <div className="flex justify-between items-start mb-3">
         <h3 className="font-medium text-gray-800">{idea.title}</h3>
         <div className="flex space-x-2">

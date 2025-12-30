@@ -7,8 +7,8 @@ import Step3Preference from "../components/steps/Step3Preference";
 import Review from "../components/steps/Review";
 
 // --------------------------------------------------------------- Configuration Form Component -------------------
-import ConfigFormComponent from "../config/ConfigFormComponent";
-import { reducer, initialValue } from "../config/RegisterReducer";
+import ConfigFormComponent from "../utils/ConfigFormComponent";
+import { reducer, initialValue } from "../utils/RegisterReducer";
 import { Link, Links } from "react-router";
 
 function Signin() {
@@ -51,32 +51,39 @@ function Signin() {
   }
 
   return (
-    <div className="">
-      <h1 className="text-2xl m-4 text-center mb-6">
-        Signing Page -- Step: {step}
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col justify-center">
+      <h1 className="text-2xl font-semibold text-center text-gray-800 mb-6">
+        Create Account
+        <span className="block text-sm font-normal text-gray-500 mt-1">
+          Step {step + 1} of {configStep.length}
+        </span>
       </h1>
-      <div className="">
+
+      <div>
         <ActiveStep dispatch={dispatch} formData={formData} err={err} />
-        <div className="flex justify-center gap-7 my-8">
+
+        <div className="flex justify-center gap-6 my-10">
           <button
-            className={`cursor-pointer px-4 py-1 rounded-[5px] bg-blue-600 text-white ${
+            className={`px-6 py-2 rounded-lg font-medium bg-gray-300 text-gray-700 hover:bg-gray-400 transition ${
               step === 0 ? "hidden" : "block"
             }`}
             onClick={() => handleBackStep("BACK")}
           >
             Back
           </button>
+
           <button
-            className={`cursor-pointer px-4 py-1 rounded-[5px] bg-green-500 text-white ${
+            className={`px-6 py-2 rounded-lg font-medium bg-green-500 text-white hover:bg-green-600 transition ${
               step >= configStep.length - 1 ? "hidden" : "block"
             }`}
             onClick={() => handleNextStep("NEXT")}
           >
             Next
           </button>
+
           <Link to="/">
             <button
-              className={`cursor-pointer px-4 py-1 rounded-[5px] bg-red-600 text-white ${
+              className={`px-6 py-2 rounded-lg font-medium bg-red-500 text-white hover:bg-red-600 transition ${
                 step === configStep.length - 1 ? "block" : "hidden"
               }`}
               onClick={handleSubmit}

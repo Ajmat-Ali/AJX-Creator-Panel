@@ -4,7 +4,7 @@ import RecentMain from "./RecentMain";
 
 function DashboardHome() {
   return (
-    <div>
+    <div className="p-8">
       <DashboardHomeHeader />
       <PerformanceChart />
       <RecentMain />

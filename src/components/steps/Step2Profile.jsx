@@ -56,76 +56,107 @@ function Step2Profile({ formData, dispatch, err }) {
     });
   };
   return (
-    <div className="border-2 border-green-600 w-4/12 m-auto py-0 px-6 | max-xl:w-6/12 | max-md:w-8/12 | max-sm:w-7/12 max-sm30:w-10/12 max-sm22:w-12/12  max-sm22:px-2">
-      <h2 className="text-xl text-center font-semibold mb-8">
+    <div
+      className="w-4/12 max-xl:w-6/12 max-md:w-8/12 max-sm:w-7/12 max-sm30:w-10/12 max-sm22:w-12/12 
+                bg-white shadow-lg rounded-xl m-auto px-8 py-10 max-sm22:px-4"
+    >
+      <h2 className="text-xl font-semibold text-center text-gray-800 mb-8">
         Profile Details
       </h2>
-      <div className="">
-        <div className="flex justify-center gap-5 mb-4 max-sm:flex-col">
+
+      <div>
+        <div className="flex gap-4 mb-5 max-sm:flex-col">
           <div className="flex flex-col gap-1 w-6/12 max-sm:w-full">
-            <label htmlFor="userName">User Name</label>
+            <label
+              className="text-sm font-medium text-gray-700"
+              htmlFor="userName"
+            >
+              User Name
+            </label>
             <input
               type="text"
               placeholder="User Name"
               id="userName"
-              className="w-full border border-gray-400 rounded-md px-4 py-2 pr-10"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 
+                     focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
               value={userName}
               onChange={handleChange}
             />
-            <span className="text-red-500 text-sm">
+            <span className="text-red-500 text-sm min-h-[18px]">
               {err.userName && err.userName}
             </span>
           </div>
+
           <div className="flex flex-col gap-1 w-6/12 max-sm:w-full">
-            <label htmlFor="phone">Phone Number</label>
+            <label
+              className="text-sm font-medium text-gray-700"
+              htmlFor="phone"
+            >
+              Phone Number
+            </label>
             <input
               type="number"
               placeholder="Phone Number"
               id="phone"
-              className="w-full border border-gray-400 rounded-md px-4 py-2 pr-10"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 
+                     focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
               value={phone}
               onChange={handleChange}
             />
-            <span className="text-red-500 text-sm">
+            <span className="text-red-500 text-sm min-h-[18px]">
               {err.phone && err.phone}
             </span>
           </div>
         </div>
-        <div className="flex flex-col gap-1 mb-4">
-          <label htmlFor="password">Bio / About You</label>
+
+        <div className="flex flex-col gap-1 mb-5">
+          <label className="text-sm font-medium text-gray-700" htmlFor="bio">
+            Bio / About You
+          </label>
           <textarea
-            className="w-full border border-gray-400 rounded-md px-4 py-2 pr-10 h-32"
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 h-32 
+                   resize-none focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
             id="bio"
             value={bio}
             onChange={handleChange}
           />
         </div>
-        <div className="flex flex-col gap-1 mb-4">
-          <label htmlFor="avatar">Choose Profile Pic</label>
-          <div className="flex gap-10  mb-4 max-sm22:flex-col max-sm:gap-0">
-            <input
-              type="file"
-              id="avatar"
-              name="image"
-              accept="image/*"
-              className="w-full border border-gray-400 rounded-md px-4 py-2 pr-10 cursor-pointer"
-              onChange={handleChange}
-            />
-          </div>
+
+        <div className="flex flex-col gap-1 mb-5">
+          <label className="text-sm font-medium text-gray-700" htmlFor="avatar">
+            Choose Profile Picture
+          </label>
+
+          <input
+            type="file"
+            id="avatar"
+            name="image"
+            accept="image/*"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 
+                   cursor-pointer file:mr-4 file:py-2 file:px-4 
+                   file:rounded-md file:border-0 
+                   file:bg-blue-50 file:text-blue-600 
+                   hover:file:bg-blue-100 transition"
+            onChange={handleChange}
+          />
+
           {avatar && (
             <img
               src={avatar}
-              alt="Image URL"
-              className={`${
-                avatar ? "inline" : "hidden"
-              } w-30 m-auto max-sm:w-20 max-sm22:w-5/12 border border-gray-400 rounded-md px-4 py-2`}
+              alt="Profile Preview"
+              className="mt-6 w-28 h-28 object-cover rounded-full mx-auto 
+                     border border-gray-300 shadow-sm"
             />
           )}
         </div>
-        <span className="text-red-500">{fileError?.error}</span>
-        <div className="text-center mt-4 mb-2">
-          Already have account!{" "}
-          <span className="text-blue-500 underline cursor-pointer">
+
+        <span className="text-red-500 text-sm block min-h-[18px] text-center">
+          {fileError?.error}
+        </span>
+
+        <div className="text-center text-sm text-gray-600 mt-6">
+          Already have an account?{" "}
+          <span className="text-blue-600 font-semibold hover:underline cursor-pointer">
             <Link to="/login">Login here</Link>
           </span>
         </div>
